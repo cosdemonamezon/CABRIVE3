@@ -9,6 +9,12 @@ class DetailTicket extends StatefulWidget {
 }
 
 class _DetailTicketState extends State<DetailTicket> {
+  String yellow = "";
+  String green ="";
+  String perple = "";
+  String red = "";
+  String blue = "";
+  String pink = "";
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -58,7 +64,12 @@ class _DetailTicketState extends State<DetailTicket> {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(
+                    child: yellow == "yellow" 
+                    ?Image.asset(
+                      "assets/images/Stadium-2.png",
+                      fit: BoxFit.fill,
+                    )
+                    :Image.asset(
                       "assets/images/Stadium-1.png",
                       fit: BoxFit.fill,
                     ),
@@ -98,10 +109,17 @@ class _DetailTicketState extends State<DetailTicket> {
                                 fontWeight: FontWeight.w400, fontSize: 14, color: kFontPrimaryColor
                               ),
                             ),
-                            Container(
-                              height: 20,
-                              width: 60,
-                              color: Colors.yellow[800],
+                            GestureDetector(
+                              onTap: (){
+                                setState(() {
+                                  yellow = "yellow";
+                                });
+                              },
+                              child: Container(
+                                height: 20,
+                                width: 60,
+                                color: Colors.yellow[800],
+                              ),
                             ),
                             Text(
                               "120",
@@ -349,7 +367,7 @@ class _DetailTicketState extends State<DetailTicket> {
                               ),
                             ),
                             Container(
-                              height: 40,
+                              height: 50,
                               width: 90,
                               decoration: BoxDecoration(
                                 color: kInputSearchColor.withOpacity(0.5),
@@ -357,6 +375,9 @@ class _DetailTicketState extends State<DetailTicket> {
                               ),
                               child: Center(
                                 child: TextFormField(
+                                  style: TextStyle(color: Colors.white),
+                                  textAlign: TextAlign.center,
+                                  keyboardType: TextInputType.number,
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
                                     contentPadding: EdgeInsets.zero
