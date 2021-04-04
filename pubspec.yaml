@@ -1,0 +1,139 @@
+name: CABRIVE
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.0
+  #flutter_svg: ^0.19.1
+  flutter_svg: ^0.19.3
+  tflite_flutter: ^0.5.0
+  camera: ^0.5.8+5
+  path_provider:
+  path:
+  firebase_ml_vision: ^0.9.6+2
+  image:
+  carousel_slider: ^3.0.0
+  sliding_up_panel: ^1.0.2
+  buttons_tabbar: ^1.1.1
+  flutter_calendar_carousel: ^1.5.3
+  video_player: ^1.0.1
+  chewie: ^0.12.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/charactor/
+    - assets/icons/
+    - assets/logo/
+    - assets/
+    - assets/145191267_3741130079263690_2731191343081539548_o.jpg
+    - assets/144255167_3737014689675229_3783920849437474356_o.jpg
+    - assets/145337107_3741130332596998_1198327403787382672_o.jpg
+    - assets/144608882_3741129562597075_1449389103962532175_o.jpg
+    - assets/145232660_3741129715930393_5130650717385289926_o.jpg
+    - assets/142130192_3723244804385551_7472341975798282192_o.jpg
+    - assets/131935758_3624002657643100_2330089908347051597_n.jpg
+    - assets/144482999_3737138806329484_4986658706291405403_o.jpg
+    - assets/142130192_3723244804385551_7472341975798282192_o.jpg
+    - assets/144241294_3734758989900799_1924641855745037453_o.jpg
+    - assets/131982946_3631407893569243_1613121772109122784_n.jpg
+    - assets/131948114_3624474260929273_4187310378479201958_o.jpg
+    - assets/State_of_Origin_Game_II_2018.jpg
+    - assets/FIFA_World_Cup_2010_Mexico_VS_South_Africa.jpg
+    - assets/Stade_de_Twickenham_à_Londres.jpg
+    - assets/StadeFranceNationsLeague2018.jpg
+    - assets/E37_Perth_Stadium_Open_Day_089.jpeg
+    - assets/FIFA_World_Cup_2010_Slovakia_Italy.jpg
+    - assets/Marvel_Stadium_from_an_aerial_perspective._Feb_2019.jpg
+    - assets/Murrayfield_Stadium_2005-05-13.jpg
+    - assets/State_of_Origin_Game_II_2018.jpg
+    - assets/FIFA_World_Cup_2010_Slovakia_Italy.jpg
+    - assets/Murrayfield_Stadium_2005-05-13.jpg
+    - assets/images/ironman.jpg
+    - assets/images/captain-america.jpg
+    - assets/images/hulk.jpg
+    - assets/images/scarlet-witch.jpg
+    - assets/images/spiderman.jpg
+    - assets/images/black-widow.jpg
+    - assets/images/thor.png
+    - assets/images/captain-marvel.jpg
+    - assets/images/nick-fury.jpg
+    - assets/logo/Image5.png
+    - assets/logo/surface1.png
+    - assets/logo/STADE_ROCHELAIS.png
+    - assets/logo/Image3.png
+    - assets/images/Stadium-Art.png
+    - assets/images/seat-blue.png
+    - assets/images/seat-red.png
+    - assets/images/seat-yellow.png
+    - assets/images/Stadium-3.png
+    - assets/images/Stadium-1.png
+    - assets/icons/wallet-01.png
+    - assets/icons/mastercard-01.png
+    - assets/icons/visa-01.png
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages

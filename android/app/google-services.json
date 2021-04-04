@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "342895875860",
+    "project_id": "test-1562584937858",
+    "storage_bucket": "test-1562584937858.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342895875860:android:6792980d0d1b63b92d1401",
+        "android_client_info": {
+          "package_name": "com.example.CABRIVE"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342895875860-51tdsb4t5lecrai495qlbh394b0d27hf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCh6YTN_-fv6dy5h_JzWJJaFQY6QEqEdZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342895875860-51tdsb4t5lecrai495qlbh394b0d27hf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
