@@ -111,6 +111,12 @@ flutter:
     - assets/icons/wallet-01.png
     - assets/icons/mastercard-01.png
     - assets/icons/visa-01.png
+    - assets/images/green.png
+    - assets/images/red.png
+    - assets/images/yellow.png
+    - assets/images/perple.png
+    - assets/images/blue.png
+    - assets/images/download.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

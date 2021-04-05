@@ -54,7 +54,7 @@ class _BuyticketState extends State<Buyticket> {
                   Container(
                     height: 13,
                     width: 40,
-                    color: kContainer,
+                    color: Colors.yellow[800],
                   ),
                   SizedBox(width: 5,),
                   Text(
@@ -250,10 +250,13 @@ class _BuyticketState extends State<Buyticket> {
                 ),
               ),
               SizedBox(height: 40,),
-              Center(
-                child: Text(
-                  "Add card",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: kContainer),
+              GestureDetector(
+                onTap: (){},
+                child: Center(
+                  child: Text(
+                    "Add card",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: kCicleColor),
+                  ),
                 ),
               ),
               SizedBox(height: 35,),
@@ -262,11 +265,11 @@ class _BuyticketState extends State<Buyticket> {
                 children: [
                   Text(
                     "Total",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: kContainer),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: kFontPrimaryColor),
                   ),
                   Text(
                     "120",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: kContainer),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: kCicleColor),
                   ),
                 ],
               ),
@@ -283,10 +286,10 @@ class _BuyticketState extends State<Buyticket> {
                     showDialog(
                       barrierDismissible: false,
                       context: context,
-                      builder: (context) => faceScandialog(
-                        touchID,
-                        subTouchID,
-                        secoundTouchID,
+                      builder: (context) => faceScan1(
+                        faceScan1ID,
+                        subfaceScan1ID,
+                        secoundfaceScan1ID,
                         facePic,
                         context,
                       ),

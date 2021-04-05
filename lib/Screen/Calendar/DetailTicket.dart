@@ -1,3 +1,5 @@
+import 'package:CABRIVE/Screen/Stadium/Buyticket.dart';
+import 'package:CABRIVE/alert.dart';
 import 'package:flutter/material.dart';
 import 'package:CABRIVE/constants.dart';
 
@@ -15,6 +17,7 @@ class _DetailTicketState extends State<DetailTicket> {
   String red = "";
   String blue = "";
   String pink = "";
+  bool next = false;
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -66,7 +69,27 @@ class _DetailTicketState extends State<DetailTicket> {
                     padding: const EdgeInsets.all(8.0),
                     child: yellow == "yellow" 
                     ?Image.asset(
-                      "assets/images/Stadium-2.png",
+                      "assets/images/yellow.png",
+                      fit: BoxFit.fill,
+                    )
+                    :green == "green" 
+                    ?Image.asset(
+                      "assets/images/green.png",
+                      fit: BoxFit.fill,
+                    )
+                    :red == "red"
+                    ?Image.asset(
+                      "assets/images/red.png",
+                      fit: BoxFit.fill,
+                    )
+                    :blue == "blue"
+                    ?Image.asset(
+                      "assets/images/blue.png",
+                      fit: BoxFit.fill,
+                    )
+                    :perple == "perple"
+                    ?Image.asset(
+                      "assets/images/perple.png",
                       fit: BoxFit.fill,
                     )
                     :Image.asset(
@@ -111,9 +134,9 @@ class _DetailTicketState extends State<DetailTicket> {
                             ),
                             GestureDetector(
                               onTap: (){
-                                setState(() {
-                                  yellow = "yellow";
-                                });
+                                // setState(() {
+                                //   yellow = "yellow";
+                                // });
                               },
                               child: Container(
                                 height: 20,
@@ -336,10 +359,33 @@ class _DetailTicketState extends State<DetailTicket> {
                                   bottom: 10,
                                   right: 15,
                                   left: 15,
-                                  child: Container(
-                                    height: 20,
-                                    width: 60,
-                                    color: Colors.yellow[800],
+                                  child: GestureDetector(
+                                    onTap: (){
+                                      showDialog(
+                                        barrierDismissible: false,
+                                        context: context,
+                                        builder: (context) => selectdialog(  
+                                          
+                                        ),
+                                      );
+                                    },
+                                    child: Container(
+                                      height: 20,
+                                      width: 60,
+                                      color: yellow == "yellow" 
+                                      ?Colors.yellow[800]
+                                      : 
+                                      green == "green" ? Colors.greenAccent
+                                      :
+                                      perple == "perple" ? Colors.purple
+                                      :
+                                      red == "red" ? Colors.redAccent[700]
+                                      :
+                                      blue == "blue" ? Colors.blue
+                                      :
+                                      pink == "pink" ? Colors.pink[200]
+                                      :kLinkTextColor,
+                                    ),
                                   ),
                                 ),
                               ]                            
@@ -395,8 +441,280 @@ class _DetailTicketState extends State<DetailTicket> {
                   ),
                 ],
               ),
+
+              SizedBox(height: 20,),
+              Container(
+              height: size.height * 0.08,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: next == true ? kCicleColor
+                :kHintextColor,
+              ),
+              child: FlatButton(
+                onPressed: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Buyticket()));
+                },
+                child: Text(
+                  "NEXT",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
+                ),
+              ),
+            ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+  selectdialog(){
+    return Dialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(Constants.padding),
+      ),
+      elevation: 4,
+      backgroundColor: Colors.transparent,
+      child: Container(
+        padding: EdgeInsets.only(
+          left: Constants.padding,
+          top: Constants.avatarRadius + Constants.padding,
+          right: Constants.padding,
+          bottom: Constants.padding
+        ),
+        margin: EdgeInsets.only(top: Constants.avatarRadius),
+        decoration: BoxDecoration(
+          shape: BoxShape.rectangle,
+          color: kBackgroundColor,
+          borderRadius: BorderRadius.circular(Constants.padding),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black, offset: Offset(0, 10), blurRadius: 10),
+          ]
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Text(
+                "SELETE ZONE",
+                style: TextStyle(
+                  fontWeight: FontWeight.w400, fontSize: 14, color: kFontPrimaryColor
+                ),
+              ),              
+            ),
+
+            Container(
+              height: 50,
+              width: 300,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    "ZONE",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400, fontSize: 14, color: kFontPrimaryColor
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        yellow = "yellow";
+                        green = "";                        
+                        perple = "";
+                        red = "";
+                        blue = "";
+                        pink = "";
+                        next = true;
+                      });
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 200,
+                      color: Colors.yellow[800],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Container(
+              height: 50,
+              width: 300,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    "ZONE",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400, fontSize: 14, color: kFontPrimaryColor
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        green = "green";
+                        yellow = "";
+                        perple = "";
+                        red = "";
+                        blue = "";
+                        pink = "";
+                        next = true;
+                      });
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 200,
+                      color: Colors.greenAccent,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Container(
+              height: 50,
+              width: 300,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    "ZONE",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400, fontSize: 14, color: kFontPrimaryColor
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){                      
+                      setState(() {
+                        perple= "perple";
+                        green = "";
+                        yellow = "";
+                        red = "";
+                        blue = "";
+                        pink = "";
+                        next = true;
+                      });
+                      Navigator.pop(context);                    
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 200,
+                      color: Colors.purple,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Container(
+              height: 50,
+              width: 300,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    "ZONE",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400, fontSize: 14, color: kFontPrimaryColor
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        red= "red";
+                        green = "";
+                        yellow = "";
+                        perple = "";
+                        blue = "";
+                        pink = "";
+                        next = true;
+                      });
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 200,
+                      color: Colors.redAccent[700],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Container(
+              height: 50,
+              width: 300,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    "ZONE",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400, fontSize: 14, color: kFontPrimaryColor
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        blue= "blue";
+                        green = "";
+                        yellow = "";
+                        perple = "";
+                        red = "";
+                        pink = "";
+                        next = true;
+                      });
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 200,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Container(
+              height: 50,
+              width: 300,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    "ZONE",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400, fontSize: 14, color: kFontPrimaryColor
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        pink= "pink";
+                        green = "";
+                        yellow = "";
+                        perple = "";
+                        red = "";
+                        blue = "";
+                        next = true;
+                      });
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 200,
+                      color: Colors.pink[200],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

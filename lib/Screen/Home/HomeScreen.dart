@@ -1,3 +1,4 @@
+import 'package:CABRIVE/Screen/Home/Trade.dart';
 import 'package:CABRIVE/Screen/New/NewsScreen.dart';
 import 'package:CABRIVE/Screen/Sport/SportScreen.dart';
 import 'package:CABRIVE/constants.dart';
@@ -768,10 +769,31 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ],
                                 ),
                               ),
+
+                              SizedBox(height: 20,),
+              
                             ],
                           ),
                         ),
                       ],
+                    ),
+                  ),
+                  Container(
+                    height: size.height * 0.08,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: kCicleColor,
+                    ),
+                    child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context, MaterialPageRoute(builder: (context) => Trade()));
+                      },
+                      child: Text(
+                        "TRADE",
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
+                      ),
                     ),
                   ),
                   SizedBox(
