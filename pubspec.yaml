@@ -66,6 +66,11 @@ flutter:
     - assets/icons/
     - assets/logo/
     - assets/
+    - assets/c1.png
+    - assets/c2.png
+    - assets/c3.png
+    - assets/c4.png
+    - assets/c5.png
     - assets/145191267_3741130079263690_2731191343081539548_o.jpg
     - assets/144255167_3737014689675229_3783920849437474356_o.jpg
     - assets/145337107_3741130332596998_1198327403787382672_o.jpg
@@ -118,6 +123,7 @@ flutter:
     - assets/images/perple.png
     - assets/images/blue.png
     - assets/images/download.png
+    - assets/images/coin.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

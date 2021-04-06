@@ -14,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'package:CABRIVE/Screen/Widgets/NavigationBar.dart';
 import 'package:CABRIVE/Screen/Stadium/StadiumScreen.dart';
 import 'package:CABRIVE/Screen/Promotion/PromotionScreen.dart';
+import 'package:CABRIVE/Screen/Home/Wallet.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -796,6 +797,29 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
+
+                  Container(
+                    height: size.height * 0.08,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: kCicleColor,
+                    ),
+                    child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context, MaterialPageRoute(builder: (context) => Wallet()));
+                      },
+                      child: Text(
+                        "WALLET",
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
+                      ),
+                    ),
+                  ),
+
                   SizedBox(
                     height: 30,
                   ),
