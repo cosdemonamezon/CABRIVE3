@@ -1,3 +1,4 @@
+import 'package:CABRIVE/Screen/Home/Shop.dart';
 import 'package:CABRIVE/Screen/Home/Trade.dart';
 import 'package:CABRIVE/Screen/New/NewsScreen.dart';
 import 'package:CABRIVE/Screen/Sport/SportScreen.dart';
@@ -835,7 +836,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: FlatButton(
                       onPressed: () {
                         Navigator.push(
-                          context, MaterialPageRoute(builder: (context) => ShopDetail()));
+                          context, MaterialPageRoute(builder: (context) => Shop()));
                       },
                       child: Text(
                         "SHOP",

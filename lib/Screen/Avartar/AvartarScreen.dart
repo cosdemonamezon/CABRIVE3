@@ -239,7 +239,10 @@ class _AvartarScreenState extends State<AvartarScreen> {
                   shape: new RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(15.0),
                       side: BorderSide(color: kButtonColor)),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                  },
                   color: kButtonColor,
                   textColor: kTextButtonColor,
                   child: Text("DONE".toUpperCase(),
