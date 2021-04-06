@@ -3,6 +3,7 @@ import 'package:CABRIVE/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:CABRIVE/Screen/Stadium/FnbStadium.dart';
+import 'package:CABRIVE/Screen/Stadium/WatchStadium.dart';
 
 class Detailmath extends StatefulWidget {
   Detailmath({Key key}) : super(key: key);
@@ -424,8 +425,10 @@ class _DetailmathState extends State<Detailmath> {
               ),
               child: FlatButton(
                 onPressed: () {
+                  // Navigator.push(
+                  //   context, MaterialPageRoute(builder: (context) => FnbStadium()));
                   Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => FnbStadium()));
+                    context, MaterialPageRoute(builder: (context) => WatchStadium()));
                 },
                 child: Text(
                   "WATCH NOW",

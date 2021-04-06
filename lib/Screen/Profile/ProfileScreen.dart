@@ -12,6 +12,9 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  bool listSwith = false;
+
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -19,20 +22,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Profile"),
-        actions: [
-          IconButton(
-              iconSize: 32,
-              icon: Icon(Icons.settings),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProfileSetting()));
-              }),
-        ],
+        title: Text("PROFILE & SETTINGS"),
+        // actions: [
+        //   IconButton(
+        //       iconSize: 32,
+        //       icon: Icon(Icons.settings),
+        //       onPressed: () {
+        //         Navigator.push(context,
+        //             MaterialPageRoute(builder: (context) => ProfileSetting()));
+        //       }),
+        // ],
       ),
       body: SingleChildScrollView(
         child: Container(
-          height: height,
+          //height: height,
           child: Column(
             children: [
               Container(
@@ -120,81 +123,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     Positioned(
-                      //bottom: 20,
-                      top: 130,
+                      bottom: 20,
+                      //top: 130,
                       // right: 30,
                       // left: 120,
                       child: Container(
-                        height: 110,
-                        width: 370,
-                        //color: Colors.amber,
-                        decoration: BoxDecoration(
-                          color: kInputSearchColor,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(18),
-                            topRight: Radius.circular(18),
-                            bottomLeft: Radius.circular(18),
-                            bottomRight: Radius.circular(18),
-                          ),
-                        ),
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 35),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "My Wallet",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14,
-                                        color: kFontSecondTextColor),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      "3,190.00",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 30,
-                                          color: kCicleColor),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      "USD",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 14,
-                                          color: kCicleColor),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
+                    height: 50,
+                    width: 270,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: kCicleColor,
+                    ),
+                    child: FlatButton(
+                      onPressed: () {
+                        // Navigator.push(
+                        //   context, MaterialPageRoute(builder: (context) => Wallet()));
+                      },
+                      child: Text(
+                        "Edit Avata",
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
                       ),
+                    ),
+                  ),
+                     
                     ),
                     Positioned(
                       right: 10.0,
@@ -210,330 +161,142 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ],
                 ),
               ),
-              //Text("data"),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: size.height * 0.08,
-                      width: 180,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: kButtonColor,
-                      ),
-                      child: FlatButton(
-                        onPressed: () {
-                          // Navigator.push(
-                          //   context, MaterialPageRoute(builder: (context) => HomeScreen()));
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SvgPicture.asset("assets/icons/Top-up.svg"),
-                            //Image.asset("assets/icons/wallet-01.png"),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text("Top-up",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: kTextButtonColor)),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: size.height * 0.08,
-                      width: 180,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: kButtonColor,
-                      ),
-                      child: FlatButton(
-                        onPressed: () {
-                          // Navigator.push(
-                          //   context, MaterialPageRoute(builder: (context) => HomeScreen()));
-                        },
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SvgPicture.asset("assets/icons/Top-up.svg"),
-                            //Image.asset("assets/icons/wallet-01.png"),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text("Withdraw",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: kTextButtonColor)),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              
               SizedBox(
-                height: 40,
+                height: 10,
               ),
-              Align(
-                alignment: Alignment(0.2, 0.6),
-                child: Container(
-                  height: 362,
-                  width: double.infinity,
-                  //color: Colors.red,
-                  decoration: BoxDecoration(
-                    color: kBackgroundColor,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(18),
-                      topRight: Radius.circular(18),
-                    ),
-                  ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Card(
+                  color: kBackgroundColor,
+                  //margin: const EdgeInsets.fromLTRB(32.0, 8.0, 32.0, 16.0),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0)),
                   child: Column(
                     children: [
-                      Center(
-                        child: Text("History",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                color: kFontPrimaryColor)),
+                      ListTile(
+                        title: Text("Edit Profile",
+                            style: TextStyle(color: Colors.white)),
+                        trailing: Icon(Icons.keyboard_arrow_right),
                       ),
-                      SizedBox(
-                        height: 40,
+                      ListTile(
+                        title: Text("Change Avatar",
+                            style: TextStyle(color: Colors.white)),
+                        trailing: Icon(Icons.keyboard_arrow_right),
+                        onTap: () {
+                          //open change password
+                        },
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text("Top-up to Wallet",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400,
-                                        color: kFontPrimaryColor)),
-                                Text("23-01-2021 00:31",
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                        color: kFontPrimaryColor)),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Text("+3000.00",
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w400,
-                                            color: kFontPrimaryColor)),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text("USD",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w400,
-                                            color: kFontPrimaryColor)),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
+                      SwitchListTile(
+                        activeColor: kButtonColor,
+                        contentPadding: const EdgeInsets.all(0),
+                        value: listSwith,
+                        title: Text("Send me marketing emails",
+                            style: TextStyle(color: Colors.white)),
+                        onChanged: (val) {
+                          setState(() {
+                            listSwith = true;
+                          });
+                        },
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Center(
-                          child: Divider(
-                            color: kInputSearchColor,
-                            height: 10,
-                            thickness: 4,
+                      SwitchListTile(
+                        activeColor: kButtonColor,
+                        contentPadding: const EdgeInsets.all(0),
+                        value: listSwith,
+                        title: Text("Enable notification",
+                            style: TextStyle(color: Colors.white)),
+                        onChanged: (val) {
+                          setState(() {
+                            listSwith = true;
+                          });
+                        },
+                      ),
+                      SwitchListTile(
+                        activeColor: kButtonColor,
+                        contentPadding: const EdgeInsets.all(0),
+                        value: listSwith,
+                        title: Text("Remind me to rate this app",
+                            style: TextStyle(color: Colors.white)),
+                        onChanged: (val) {
+                          setState(() {
+                            listSwith = true;
+                          });
+                        },
+                      ),
+                      SwitchListTile(
+                        activeColor: kButtonColor,
+                        contentPadding: const EdgeInsets.all(0),
+                        value: listSwith,
+                        title: Text("Background song refresh",
+                            style: TextStyle(color: Colors.white)),
+                        onChanged: (val) {
+                          setState(() {
+                            listSwith = true;
+                          });
+                        },
+                      ),
+                      SwitchListTile(
+                        activeColor: kButtonColor,
+                        contentPadding: const EdgeInsets.all(0),
+                        value: listSwith,
+                        title: Text("Recommend me songs based onmy location",
+                            style: TextStyle(color: Colors.white)),
+                        onChanged: (val) {
+                          setState(() {
+                            listSwith = true;
+                          });
+                        },
+                      ),
+                      SwitchListTile(
+                        activeColor: kButtonColor,
+                        contentPadding: const EdgeInsets.all(0),
+                        value: listSwith,
+                        title: Text("Auto-transition playback to cast devices",
+                            style: TextStyle(color: Colors.white)),
+                        onChanged: (val) {
+                          setState(() {
+                            listSwith = true;
+                          });
+                        },
+                      ),
+                      SwitchListTile(
+                        activeColor: kButtonColor,
+                        contentPadding: const EdgeInsets.all(0),
+                        value: listSwith,
+                        title: Text("Find friends from my contact list",
+                            style: TextStyle(color: Colors.white)),
+                        onChanged: (val) {
+                          setState(() {
+                            listSwith = true;
+                          });
+                        },
+                      ),
+                      const SizedBox(height: 60.0),
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(context, "/");
+                                },
+                                child: Text(
+                                  "Logout",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 18,
+                                      color: kFontPrimaryColor),
+                                ),
+                                
+                              ),
+                            ],
                           ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text("Withdrawal",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400,
-                                        color: kFontPrimaryColor)),
-                                Text("23-01-2021 00:31",
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                        color: kFontPrimaryColor)),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Text("-200.00",
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w400,
-                                            color: kFontPrimaryColor)),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text("USD",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w400,
-                                            color: kFontPrimaryColor)),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Center(
-                          child: Divider(
-                            color: kInputSearchColor,
+                          SizedBox(
                             height: 10,
-                            thickness: 4,
                           ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text("Buy Seat",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400,
-                                        color: kFontPrimaryColor)),
-                                Text("23-01-2021 00:31",
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                        color: kFontPrimaryColor)),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Text("-200.00",
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w400,
-                                            color: kFontPrimaryColor)),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text("USD",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w400,
-                                            color: kFontPrimaryColor)),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Center(
-                          child: Divider(
-                            color: kInputSearchColor,
-                            height: 10,
-                            thickness: 4,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text("Top-up to Wallet",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400,
-                                        color: kFontPrimaryColor)),
-                                Text("23-01-2021 00:31",
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                        color: kFontPrimaryColor)),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Text("-420.00",
-                                        style: TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w400,
-                                            color: kFontPrimaryColor)),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text("USD",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w400,
-                                            color: kFontPrimaryColor)),
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Center(
-                          child: Divider(
-                            color: kInputSearchColor,
-                            height: 10,
-                            thickness: 4,
-                          ),
-                        ),
-                      ),
+                        ],
+                      )
                     ],
                   ),
                 ),
