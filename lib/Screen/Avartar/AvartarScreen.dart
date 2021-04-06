@@ -28,8 +28,9 @@ import 'package:CABRIVE/Screen/Home/HomeScreen.dart';
 // ];
 
 final List<String> imgList = [
-  'assets/charactor/Men-shirt-black.png',
-  'assets/charactor/Men-shirt-white.png',
+  'assets/charactor/Men.png',
+  'assets/charactor/Men2.png',
+  'assets/charactor/Men3.png',
 ];
 
 class AvartarScreen extends StatefulWidget {
@@ -46,17 +47,19 @@ class _AvartarScreenState extends State<AvartarScreen> {
   double _panelHeightClosed = 5.0;
 
   bool editstate = false;
+  int typestate = 1;
 
   @override
   void initState() {
     super.initState();
     _fabHeight = _initFabHeight;
-    _setLoading(false);
+    _setLoading(false, 1);
   }
 
-  _setLoading(bool value) {
+  _setLoading(bool value, int type) {
     setState(() {
       editstate = value;
+      typestate = type;
     });
   }
 
@@ -77,7 +80,7 @@ class _AvartarScreenState extends State<AvartarScreen> {
               ? FlatButton(
                   textColor: Colors.white,
                   onPressed: () {
-                    _setLoading(false);
+                    _setLoading(false, 1);
                     _pc2.close();
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomeScreen()));
@@ -96,7 +99,7 @@ class _AvartarScreenState extends State<AvartarScreen> {
                 child: FlatButton(
                   textColor: Colors.white,
                   onPressed: () {
-                    _setLoading(false);
+                    _setLoading(false, 1);
                     _pc2.close();
                   },
                   child: Text("CANCEL"),
@@ -175,7 +178,7 @@ class _AvartarScreenState extends State<AvartarScreen> {
                   padding:
                       EdgeInsets.only(top: 15, left: 45, right: 45, bottom: 15),
                   onPressed: () {
-                    _setLoading(true);
+                    _setLoading(true, 1);
                     _pc2.open();
                   },
                   child: Text(
@@ -210,10 +213,10 @@ class _AvartarScreenState extends State<AvartarScreen> {
           isDraggable: false,
           parallaxOffset: .5,
           onPanelClosed: () {
-            _setLoading(false);
+            _setLoading(false, 1);
           },
           color: Color(0xff000000),
-          panelBuilder: (sc) => _panel(sc),
+          panelBuilder: (sc) => _panel(sc, this.typestate),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(18.0), topRight: Radius.circular(18.0)),
           onPanelSlide: (double pos) => setState(() {
@@ -221,11 +224,76 @@ class _AvartarScreenState extends State<AvartarScreen> {
                 pos * (_panelHeightOpen - _panelHeightClosed) + _initFabHeight;
           }),
         ),
+        Positioned(
+            top: 50.0,
+            right: 24.0,
+            child: Column(
+              children: [
+                InkWell(
+                  onTap: () {
+                    _setLoading(false, 1);
+                    _pc2.open();
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(5.0),
+                    child: Image.asset(
+                      "assets/charactor/face-00.png",
+                      width: 40,
+                      fit: BoxFit.fill,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(30.0),
+                          topLeft: Radius.circular(30.0)),
+                      color: Color(0xff000000),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    _setLoading(false, 2);
+                    _pc2.open();
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(5.0),
+                    color: Color(0xff000000),
+                    // child: InkWell(
+                    // onTap: () => print('1243256578'), //
+                    child: Image.asset(
+                      "assets/icons/icon-left.png",
+                      width: 40,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    _setLoading(false, 3);
+                    _pc2.open();
+                  },
+                  // onTap: ({_setLoading(false, 1), _pc2.close()}),
+                  child: Container(
+                    padding: EdgeInsets.all(5.0),
+                    child: Image.asset(
+                      "assets/icons/icon-left2.png",
+                      width: 40,
+                      fit: BoxFit.fill,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          bottomRight: Radius.circular(30.0),
+                          bottomLeft: Radius.circular(30.0)),
+                      color: Color(0xff000000),
+                    ),
+                  ),
+                ),
+              ],
+            )),
       ]),
     );
   }
 
-  Widget _panel(ScrollController sc) {
+  Widget _panel(ScrollController sc, int typestate) {
     return MediaQuery.removePadding(
       context: context,
       removeTop: true,
@@ -256,16 +324,44 @@ class _AvartarScreenState extends State<AvartarScreen> {
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    _category("Hair", Icons.favorite, Colors.blue, 1),
-                    _category("Face", Icons.restaurant, Colors.red, 0),
-                    _category("Eye", Icons.event, Colors.amber, 0),
-                    _category("Brow", Icons.more_horiz, Colors.green, 0),
-                    _category("Nose", Icons.more_horiz, Colors.green, 0),
-                  ],
-                ),
+                typestate == 1
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          _category("Hair", Icons.favorite, Colors.blue, 1),
+                          _category("Face", Icons.restaurant, Colors.red, 0),
+                          _category("Eye", Icons.event, Colors.amber, 0),
+                          _category("Brow", Icons.more_horiz, Colors.green, 0),
+                          _category("Nose", Icons.more_horiz, Colors.green, 0),
+                        ],
+                      )
+                    : typestate == 2
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              _category("Shirt" + typestate.toString(),
+                                  Icons.favorite, Colors.blue, 1),
+                              _category(
+                                  "Pants", Icons.restaurant, Colors.red, 0),
+                              _category("Shoes", Icons.event, Colors.amber, 0),
+                              _category("Accessories", Icons.more_horiz,
+                                  Colors.green, 0),
+                            ],
+                          )
+                        : Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              _category("Hair" + typestate.toString(),
+                                  Icons.favorite, Colors.blue, 1),
+                              _category(
+                                  "Face", Icons.restaurant, Colors.red, 0),
+                              _category("Eye", Icons.event, Colors.amber, 0),
+                              _category(
+                                  "Brow", Icons.more_horiz, Colors.green, 0),
+                              _category(
+                                  "Nose", Icons.more_horiz, Colors.green, 0),
+                            ],
+                          ),
               ],
             ),
           ),
@@ -278,20 +374,76 @@ class _AvartarScreenState extends State<AvartarScreen> {
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    _button("Popular", Icons.favorite, Color(0xff000001), 1),
-                    _button("Food", Icons.restaurant, Color(0xff464646), 0),
-                    _button("Events", Icons.event, Color(0xff341F0A), 0),
-                    _button("More", Icons.more_horiz, Color(0xff1B1105), 0),
-                    _button("More", Icons.more_horiz, Color(0xff20394F), 0),
-                    _button("More", Icons.more_horiz, Color(0xff505E69), 0),
-                    _button("More", Icons.more_horiz, Color(0xff461409), 0),
-                    _button("More", Icons.more_horiz, Color(0xff61422E), 0),
-                    _button("More", Icons.more_horiz, Color(0xff965C5B), 0),
-                  ],
-                ),
+                typestate == 1
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          _button(
+                              "Popular", Icons.favorite, Color(0xff000001), 1),
+                          _button(
+                              "Food", Icons.restaurant, Color(0xff464646), 0),
+                          _button("Events", Icons.event, Color(0xff341F0A), 0),
+                          _button(
+                              "More", Icons.more_horiz, Color(0xff1B1105), 0),
+                          _button(
+                              "More", Icons.more_horiz, Color(0xff20394F), 0),
+                          _button(
+                              "More", Icons.more_horiz, Color(0xff505E69), 0),
+                          _button(
+                              "More", Icons.more_horiz, Color(0xff461409), 0),
+                          _button(
+                              "More", Icons.more_horiz, Color(0xff61422E), 0),
+                          _button(
+                              "More", Icons.more_horiz, Color(0xff965C5B), 0),
+                        ],
+                      )
+                    : typestate == 2
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              _button("Popular", Icons.favorite,
+                                  Color(0xff000001), 1),
+                              _button("Food", Icons.restaurant,
+                                  Color(0xff464646), 0),
+                              _button(
+                                  "Events", Icons.event, Color(0xff341F0A), 0),
+                              _button("More", Icons.more_horiz,
+                                  Color(0xff1B1105), 0),
+                              _button("More", Icons.more_horiz,
+                                  Color(0xff20394F), 0),
+                              _button("More", Icons.more_horiz,
+                                  Color(0xff505E69), 0),
+                              _button("More", Icons.more_horiz,
+                                  Color(0xff461409), 0),
+                              _button("More", Icons.more_horiz,
+                                  Color(0xff61422E), 0),
+                              _button("More", Icons.more_horiz,
+                                  Color(0xff965C5B), 0),
+                            ],
+                          )
+                        : Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              _button("Popular", Icons.favorite,
+                                  Color(0xff000001), 1),
+                              _button("Food", Icons.restaurant,
+                                  Color(0xff464646), 0),
+                              _button(
+                                  "Events", Icons.event, Color(0xff341F0A), 0),
+                              _button("More", Icons.more_horiz,
+                                  Color(0xff1B1105), 0),
+                              _button("More", Icons.more_horiz,
+                                  Color(0xff20394F), 0),
+                              _button("More", Icons.more_horiz,
+                                  Color(0xff505E69), 0),
+                              _button("More", Icons.more_horiz,
+                                  Color(0xff461409), 0),
+                              _button("More", Icons.more_horiz,
+                                  Color(0xff61422E), 0),
+                              _button("More", Icons.more_horiz,
+                                  Color(0xff965C5B), 0),
+                            ],
+                          ),
               ],
             ),
           ),
@@ -308,123 +460,237 @@ class _AvartarScreenState extends State<AvartarScreen> {
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
                     children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Center(
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              child:
-                                  Image.asset("assets/charactor/face-01.png"),
+                      typestate == 1
+                          ? Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/face-00.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/face-00.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/face-00.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/face-00.png"),
+                                  ),
+                                ),
+                              ],
+                            )
+                          : Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child:
+                                        Image.asset("assets/charactor/sh1.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child:
+                                        Image.asset("assets/charactor/sh2.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child:
+                                        Image.asset("assets/charactor/sh3.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child:
+                                        Image.asset("assets/charactor/sh4.png"),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                          Center(
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              child:
-                                  Image.asset("assets/charactor/face-02.png"),
-                            ),
-                          ),
-                          Center(
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              child:
-                                  Image.asset("assets/charactor/face-03.png"),
-                            ),
-                          ),
-                          Center(
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              child:
-                                  Image.asset("assets/charactor/face-04.png"),
-                            ),
-                          ),
-                        ],
-                      ),
                       SizedBox(
                         height: 12.0,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Center(
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              child:
-                                  Image.asset("assets/charactor/face-05.png"),
+                      typestate == 1
+                          ? Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/face-00.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/face-00.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/face-00.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/face-00.png"),
+                                  ),
+                                ),
+                              ],
+                            )
+                          : Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child:
+                                        Image.asset("assets/charactor/sh5.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child:
+                                        Image.asset("assets/charactor/sh6.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child:
+                                        Image.asset("assets/charactor/sh7.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child:
+                                        Image.asset("assets/charactor/sh8.png"),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                          Center(
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              child:
-                                  Image.asset("assets/charactor/face-06.png"),
-                            ),
-                          ),
-                          Center(
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              child:
-                                  Image.asset("assets/charactor/face-07.png"),
-                            ),
-                          ),
-                          Center(
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              child:
-                                  Image.asset("assets/charactor/face-08.png"),
-                            ),
-                          ),
-                        ],
-                      ),
                       SizedBox(
                         height: 12.0,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Center(
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              child:
-                                  Image.asset("assets/charactor/face-09.png"),
+                      typestate == 1
+                          ? Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/face-00.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/face-00.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/face-00.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/face-00.png"),
+                                  ),
+                                ),
+                              ],
+                            )
+                          : Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child:
+                                        Image.asset("assets/charactor/sh9.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/sh10.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/sh11.png"),
+                                  ),
+                                ),
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                    width: 100,
+                                    child: Image.asset(
+                                        "assets/charactor/sh12.png"),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                          Center(
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              child:
-                                  Image.asset("assets/charactor/face-10.png"),
-                            ),
-                          ),
-                          Center(
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              child:
-                                  Image.asset("assets/charactor/face-11.png"),
-                            ),
-                          ),
-                          Center(
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              child:
-                                  Image.asset("assets/charactor/face-12.png"),
-                            ),
-                          ),
-                        ],
-                      ),
                     ],
                   ),
                 ),
