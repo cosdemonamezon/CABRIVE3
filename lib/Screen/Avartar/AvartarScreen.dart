@@ -18,6 +18,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:CABRIVE/Screen/Home/HomeScreen.dart';
 
+import 'package:numberpicker/numberpicker.dart';
+
 // final List<String> imgList = [
 //   'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
 //   'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
@@ -40,6 +42,13 @@ class AvartarScreen extends StatefulWidget {
   _AvartarScreenState createState() => _AvartarScreenState();
 }
 
+const double width = 350.0;
+const double height = 60.0;
+const double loginAlign = -1;
+const double signInAlign = 1;
+const Color selectedColor = Colors.white;
+const Color normalColor = Colors.black54;
+
 class _AvartarScreenState extends State<AvartarScreen> {
   final double _initFabHeight = 5.0;
   double _fabHeight;
@@ -49,14 +58,49 @@ class _AvartarScreenState extends State<AvartarScreen> {
   bool editstate = false;
   int typestate = 1;
 
+  String icon1 = 'icon-left1.png';
+  String icon2 = 'icon-left2.png';
+  String icon3 = 'icon-left3.png';
+
+  double xAlign;
+  Color loginColor;
+  Color signInColor;
+
   @override
   void initState() {
     super.initState();
     _fabHeight = _initFabHeight;
-    _setLoading(false, 1);
+    _setLoading(false, 0);
+    xAlign = loginAlign;
+    loginColor = selectedColor;
+    signInColor = normalColor;
   }
 
   _setLoading(bool value, int type) {
+    if (type == 1) {
+      setState(() {
+        icon1 = 'icon-left1-focus.png';
+        icon2 = 'icon-left2.png';
+        icon3 = 'icon-left3.png';
+        imgList[0] = 'assets/charactor/Men_sh.png';
+      });
+    }
+    if (type == 2) {
+      setState(() {
+        icon1 = 'icon-left1.png';
+        icon2 = 'icon-left2-focus.png';
+        icon3 = 'icon-left3.png';
+        imgList[0] = 'assets/charactor/Men_sh.png';
+      });
+    }
+    if (type == 3) {
+      setState(() {
+        icon1 = 'icon-left1.png';
+        icon2 = 'icon-left2.png';
+        icon3 = 'icon-left3-focus.png';
+        imgList[0] = 'assets/charactor/Men_sh.png';
+      });
+    }
     setState(() {
       editstate = value;
       typestate = type;
@@ -237,7 +281,7 @@ class _AvartarScreenState extends State<AvartarScreen> {
                   child: Container(
                     padding: EdgeInsets.all(5.0),
                     child: Image.asset(
-                      "assets/charactor/face-00.png",
+                      "assets/icons/" + this.icon1,
                       width: 40,
                       fit: BoxFit.fill,
                     ),
@@ -260,7 +304,7 @@ class _AvartarScreenState extends State<AvartarScreen> {
                     // child: InkWell(
                     // onTap: () => print('1243256578'), //
                     child: Image.asset(
-                      "assets/icons/icon-left.png",
+                      "assets/icons/" + this.icon2,
                       width: 40,
                       fit: BoxFit.fill,
                     ),
@@ -275,7 +319,7 @@ class _AvartarScreenState extends State<AvartarScreen> {
                   child: Container(
                     padding: EdgeInsets.all(5.0),
                     child: Image.asset(
-                      "assets/icons/icon-left2.png",
+                      "assets/icons/" + this.icon3,
                       width: 40,
                       fit: BoxFit.fill,
                     ),
@@ -339,8 +383,8 @@ class _AvartarScreenState extends State<AvartarScreen> {
                         ? Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              _category("Shirt" + typestate.toString(),
-                                  Icons.favorite, Colors.blue, 1),
+                              _category(
+                                  "Shirt", Icons.favorite, Colors.blue, 1),
                               _category(
                                   "Pants", Icons.restaurant, Colors.red, 0),
                               _category("Shoes", Icons.event, Colors.amber, 0),
@@ -351,15 +395,86 @@ class _AvartarScreenState extends State<AvartarScreen> {
                         : Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              _category("Hair" + typestate.toString(),
-                                  Icons.favorite, Colors.blue, 1),
-                              _category(
-                                  "Face", Icons.restaurant, Colors.red, 0),
-                              _category("Eye", Icons.event, Colors.amber, 0),
-                              _category(
-                                  "Brow", Icons.more_horiz, Colors.green, 0),
-                              _category(
-                                  "Nose", Icons.more_horiz, Colors.green, 0),
+                              Center(
+                                child: Container(
+                                  width: width,
+                                  height: height,
+                                  decoration: BoxDecoration(
+                                    color: kInputSearchColor,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(15.0),
+                                    ),
+                                  ),
+                                  child: Stack(
+                                    children: [
+                                      AnimatedAlign(
+                                        alignment: Alignment(xAlign, 0),
+                                        duration: Duration(milliseconds: 300),
+                                        child: Container(
+                                          width: width * 0.5,
+                                          height: height,
+                                          decoration: BoxDecoration(
+                                            color: kFontSecondTextColor,
+                                            borderRadius: BorderRadius.all(
+                                              Radius.circular(15.0),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            xAlign = loginAlign;
+                                            loginColor = selectedColor;
+
+                                            signInColor = normalColor;
+                                          });
+                                        },
+                                        child: Align(
+                                          alignment: Alignment(-1, 0),
+                                          child: Container(
+                                            width: width * 0.5,
+                                            color: Colors.transparent,
+                                            alignment: Alignment.center,
+                                            child: Text(
+                                              'Male',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            xAlign = signInAlign;
+                                            signInColor = selectedColor;
+
+                                            loginColor = normalColor;
+                                          });
+                                        },
+                                        child: Align(
+                                          alignment: Alignment(1, 0),
+                                          child: Container(
+                                            width: width * 0.5,
+                                            color: Colors.transparent,
+                                            alignment: Alignment.center,
+                                            child: Text(
+                                              'Female',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
               ],
@@ -368,14 +483,14 @@ class _AvartarScreenState extends State<AvartarScreen> {
           SizedBox(
             height: 12.0,
           ),
-          Container(
-            height: 50,
-            child: ListView(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                typestate == 1
-                    ? Row(
+          typestate == 1
+              ? Container(
+                  height: 50,
+                  child: ListView(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           _button(
@@ -396,57 +511,13 @@ class _AvartarScreenState extends State<AvartarScreen> {
                           _button(
                               "More", Icons.more_horiz, Color(0xff965C5B), 0),
                         ],
-                      )
-                    : typestate == 2
-                        ? Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              _button("Popular", Icons.favorite,
-                                  Color(0xff000001), 1),
-                              _button("Food", Icons.restaurant,
-                                  Color(0xff464646), 0),
-                              _button(
-                                  "Events", Icons.event, Color(0xff341F0A), 0),
-                              _button("More", Icons.more_horiz,
-                                  Color(0xff1B1105), 0),
-                              _button("More", Icons.more_horiz,
-                                  Color(0xff20394F), 0),
-                              _button("More", Icons.more_horiz,
-                                  Color(0xff505E69), 0),
-                              _button("More", Icons.more_horiz,
-                                  Color(0xff461409), 0),
-                              _button("More", Icons.more_horiz,
-                                  Color(0xff61422E), 0),
-                              _button("More", Icons.more_horiz,
-                                  Color(0xff965C5B), 0),
-                            ],
-                          )
-                        : Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              _button("Popular", Icons.favorite,
-                                  Color(0xff000001), 1),
-                              _button("Food", Icons.restaurant,
-                                  Color(0xff464646), 0),
-                              _button(
-                                  "Events", Icons.event, Color(0xff341F0A), 0),
-                              _button("More", Icons.more_horiz,
-                                  Color(0xff1B1105), 0),
-                              _button("More", Icons.more_horiz,
-                                  Color(0xff20394F), 0),
-                              _button("More", Icons.more_horiz,
-                                  Color(0xff505E69), 0),
-                              _button("More", Icons.more_horiz,
-                                  Color(0xff461409), 0),
-                              _button("More", Icons.more_horiz,
-                                  Color(0xff61422E), 0),
-                              _button("More", Icons.more_horiz,
-                                  Color(0xff965C5B), 0),
-                            ],
-                          ),
-              ],
-            ),
-          ),
+                      ),
+                    ],
+                  ),
+                )
+              : SizedBox(
+                  height: 0,
+                ),
           SizedBox(
             height: 12.0,
           ),
@@ -498,43 +569,46 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 ),
                               ],
                             )
-                          : Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Center(
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    child:
-                                        Image.asset("assets/charactor/sh1.png"),
-                                  ),
-                                ),
-                                Center(
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    child:
-                                        Image.asset("assets/charactor/sh2.png"),
-                                  ),
-                                ),
-                                Center(
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    child:
-                                        Image.asset("assets/charactor/sh3.png"),
-                                  ),
-                                ),
-                                Center(
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    child:
-                                        Image.asset("assets/charactor/sh4.png"),
-                                  ),
-                                ),
-                              ],
-                            ),
+                          : typestate == 2
+                              ? Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Center(
+                                      child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        child: Image.asset(
+                                            "assets/charactor/sh1.png"),
+                                      ),
+                                    ),
+                                    Center(
+                                      child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        child: Image.asset(
+                                            "assets/charactor/sh2.png"),
+                                      ),
+                                    ),
+                                    Center(
+                                      child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        child: Image.asset(
+                                            "assets/charactor/sh3.png"),
+                                      ),
+                                    ),
+                                    Center(
+                                      child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        child: Image.asset(
+                                            "assets/charactor/sh4.png"),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              : _IntegerExample(),
                       SizedBox(
                         height: 12.0,
                       ),
@@ -576,43 +650,46 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 ),
                               ],
                             )
-                          : Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Center(
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    child:
-                                        Image.asset("assets/charactor/sh5.png"),
-                                  ),
-                                ),
-                                Center(
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    child:
-                                        Image.asset("assets/charactor/sh6.png"),
-                                  ),
-                                ),
-                                Center(
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    child:
-                                        Image.asset("assets/charactor/sh7.png"),
-                                  ),
-                                ),
-                                Center(
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    child:
-                                        Image.asset("assets/charactor/sh8.png"),
-                                  ),
-                                ),
-                              ],
-                            ),
+                          : typestate == 2
+                              ? Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Center(
+                                      child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        child: Image.asset(
+                                            "assets/charactor/sh5.png"),
+                                      ),
+                                    ),
+                                    Center(
+                                      child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        child: Image.asset(
+                                            "assets/charactor/sh6.png"),
+                                      ),
+                                    ),
+                                    Center(
+                                      child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        child: Image.asset(
+                                            "assets/charactor/sh7.png"),
+                                      ),
+                                    ),
+                                    Center(
+                                      child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        child: Image.asset(
+                                            "assets/charactor/sh8.png"),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              : SizedBox(height: 0),
                       SizedBox(
                         height: 12.0,
                       ),
@@ -654,43 +731,46 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 ),
                               ],
                             )
-                          : Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Center(
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    child:
-                                        Image.asset("assets/charactor/sh9.png"),
-                                  ),
-                                ),
-                                Center(
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    child: Image.asset(
-                                        "assets/charactor/sh10.png"),
-                                  ),
-                                ),
-                                Center(
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    child: Image.asset(
-                                        "assets/charactor/sh11.png"),
-                                  ),
-                                ),
-                                Center(
-                                  child: Container(
-                                    height: 100,
-                                    width: 100,
-                                    child: Image.asset(
-                                        "assets/charactor/sh12.png"),
-                                  ),
-                                ),
-                              ],
-                            ),
+                          : typestate == 2
+                              ? Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Center(
+                                      child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        child: Image.asset(
+                                            "assets/charactor/sh9.png"),
+                                      ),
+                                    ),
+                                    Center(
+                                      child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        child: Image.asset(
+                                            "assets/charactor/sh10.png"),
+                                      ),
+                                    ),
+                                    Center(
+                                      child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        child: Image.asset(
+                                            "assets/charactor/sh11.png"),
+                                      ),
+                                    ),
+                                    Center(
+                                      child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        child: Image.asset(
+                                            "assets/charactor/sh12.png"),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              : SizedBox(height: 0),
                     ],
                   ),
                 ),
@@ -811,6 +891,119 @@ class _AvartarScreenState extends State<AvartarScreen> {
                 )
               ]),
         ),
+      ],
+    );
+  }
+}
+
+class _IntegerExample extends StatefulWidget {
+  @override
+  __IntegerExampleState createState() => __IntegerExampleState();
+}
+
+class __IntegerExampleState extends State<_IntegerExample> {
+  int _currentIntValue = 10;
+  int _currentHorizontalIntValue = 10;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        SizedBox(height: 16),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Weight ',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.bold,
+                )),
+            IconButton(
+              color: Colors.white,
+              icon: Icon(Icons.remove),
+              onPressed: () => setState(() {
+                final newValue = _currentIntValue - 10;
+                _currentIntValue = newValue.clamp(0, 100);
+              }),
+            ),
+            Text('Current int value: $_currentIntValue',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.bold,
+                )),
+            IconButton(
+              color: Colors.white,
+              icon: Icon(Icons.add),
+              onPressed: () => setState(() {
+                final newValue = _currentIntValue + 20;
+                _currentIntValue = newValue.clamp(0, 100);
+              }),
+            ),
+          ],
+        ),
+        SizedBox(height: 16),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Height ',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.bold,
+                )),
+            IconButton(
+              color: Colors.white,
+              icon: Icon(Icons.remove),
+              onPressed: () => setState(() {
+                final newValue = _currentIntValue - 10;
+                _currentIntValue = newValue.clamp(0, 100);
+              }),
+            ),
+            Text('Current int value: $_currentIntValue',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.bold,
+                )),
+            IconButton(
+              color: Colors.white,
+              icon: Icon(Icons.add),
+              onPressed: () => setState(() {
+                final newValue = _currentIntValue + 20;
+                _currentIntValue = newValue.clamp(0, 100);
+              }),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _DecimalExample extends StatefulWidget {
+  @override
+  __DecimalExampleState createState() => __DecimalExampleState();
+}
+
+class __DecimalExampleState extends State<_DecimalExample> {
+  double _currentDoubleValue = 3.0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        SizedBox(height: 16),
+        Text('Decimal', style: Theme.of(context).textTheme.headline6),
+        DecimalNumberPicker(
+          value: _currentDoubleValue,
+          minValue: 0,
+          maxValue: 10,
+          decimalPlaces: 2,
+          onChanged: (value) => setState(() => _currentDoubleValue = value),
+        ),
+        SizedBox(height: 32),
       ],
     );
   }
