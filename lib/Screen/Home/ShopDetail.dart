@@ -96,8 +96,8 @@ class _ShopDetailState extends State<ShopDetail> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Container(
-                        height: 85,
-                        width: 85,
+                        height: 83,
+                        width: 83,
                         color: kHintextColor,
                       ),
                     ),
@@ -192,7 +192,7 @@ class _ShopDetailState extends State<ShopDetail> {
               ),
 
 
-              
+
             ],
           ),
         ),
