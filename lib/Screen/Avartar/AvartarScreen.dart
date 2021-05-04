@@ -21,6 +21,8 @@ import 'package:CABRIVE/Screen/Home/HomeScreen.dart';
 
 import 'package:numberpicker/numberpicker.dart';
 
+import '../../constants.dart';
+
 // final List<String> imgList = [
 //   'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
 //   'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
@@ -83,7 +85,7 @@ class _AvartarScreenState extends State<AvartarScreen> {
         icon1 = 'icon-left1-focus.png';
         icon2 = 'icon-left2.png';
         icon3 = 'icon-left3.png';
-        imgList[0] = 'assets/charactor/Men_sh.png';
+        imgList[0] = 'assets/charactor/Men.png';
       });
     }
     if (type == 2) {
@@ -99,7 +101,7 @@ class _AvartarScreenState extends State<AvartarScreen> {
         icon1 = 'icon-left1.png';
         icon2 = 'icon-left2.png';
         icon3 = 'icon-left3-focus.png';
-        imgList[0] = 'assets/charactor/Men_sh.png';
+        imgList[0] = 'assets/charactor/Men.png';
       });
     }
     setState(() {
@@ -920,30 +922,43 @@ class __IntegerExampleState extends State<_IntegerExample> {
             Text('Weight ',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 14.0,
+                  fontSize: 16.0,
                   fontWeight: FontWeight.bold,
                 )),
-            IconButton(
-              color: Colors.white,
-              icon: Icon(Icons.remove),
-              onPressed: () => setState(() {
-                final newValue = _currentIntValue - 10;
-                _currentIntValue = newValue.clamp(0, 100);
-              }),
-            ),
-            Text('Current int value: $_currentIntValue',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.bold,
-                )),
-            IconButton(
-              color: Colors.white,
-              icon: Icon(Icons.add),
-              onPressed: () => setState(() {
-                final newValue = _currentIntValue + 20;
-                _currentIntValue = newValue.clamp(0, 100);
-              }),
+            SizedBox(width: 25),
+            Container(
+              decoration: BoxDecoration(
+                  color: kInputSearchColor,
+                  borderRadius: BorderRadius.all(Radius.circular(20.0))),
+              child: Row(
+                children: [
+                  IconButton(
+                    color: Colors.white,
+                    icon: Icon(Icons.arrow_left),
+                    onPressed: () => setState(() {
+                      final newValue = _currentIntValue - 10;
+                      _currentIntValue = newValue.clamp(0, 100);
+                    }),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 50),
+                    child: Text('$_currentIntValue',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                        )),
+                  ),
+                  IconButton(
+                    color: Colors.white,
+                    icon: Icon(Icons.arrow_right),
+                    onPressed: () => setState(() {
+                      final newValue = _currentIntValue + 20;
+                      _currentIntValue = newValue.clamp(0, 100);
+                    }),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -954,30 +969,43 @@ class __IntegerExampleState extends State<_IntegerExample> {
             Text('Height ',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 14.0,
+                  fontSize: 16.0,
                   fontWeight: FontWeight.bold,
                 )),
-            IconButton(
-              color: Colors.white,
-              icon: Icon(Icons.remove),
-              onPressed: () => setState(() {
-                final newValue = _currentIntValue - 10;
-                _currentIntValue = newValue.clamp(0, 100);
-              }),
-            ),
-            Text('Current int value: $_currentIntValue',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.bold,
-                )),
-            IconButton(
-              color: Colors.white,
-              icon: Icon(Icons.add),
-              onPressed: () => setState(() {
-                final newValue = _currentIntValue + 20;
-                _currentIntValue = newValue.clamp(0, 100);
-              }),
+            SizedBox(width: 25),
+            Container(
+              decoration: BoxDecoration(
+                  color: kInputSearchColor,
+                  borderRadius: BorderRadius.all(Radius.circular(20.0))),
+              child: Row(
+                children: [
+                  IconButton(
+                    color: Colors.white,
+                    icon: Icon(Icons.arrow_left),
+                    onPressed: () => setState(() {
+                      final newValue = _currentIntValue - 10;
+                      _currentIntValue = newValue.clamp(0, 100);
+                    }),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 50),
+                    child: Text('$_currentIntValue',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                        )),
+                  ),
+                  IconButton(
+                    color: Colors.white,
+                    icon: Icon(Icons.arrow_right),
+                    onPressed: () => setState(() {
+                      final newValue = _currentIntValue + 20;
+                      _currentIntValue = newValue.clamp(0, 100);
+                    }),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
