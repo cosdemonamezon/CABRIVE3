@@ -122,7 +122,7 @@ class _BuyticketState extends State<Buyticket> {
                                     "Wallet",
                                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: kFontPrimaryColor),
                                   ),
-                                  Icon(Icons.check_circle, color: kContainer,),
+                                  Icon(Icons.check_circle, color: kButtonColor,),
                                 ],
                               ),
                             ),
@@ -284,7 +284,7 @@ class _BuyticketState extends State<Buyticket> {
                 child: FlatButton(
                   onPressed: () {
                     showDialog(
-                      barrierDismissible: false,
+                      barrierDismissible: true,
                       context: context,
                       builder: (context) => faceScan1(
                         faceScan1ID,

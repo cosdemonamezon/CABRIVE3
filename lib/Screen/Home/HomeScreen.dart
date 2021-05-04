@@ -81,60 +81,61 @@ class _HomeScreenState extends State<HomeScreen> {
                 "assets/87976479_2856061841103856_1014097372642279424_o.png",
                 fit: BoxFit.contain,
               ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(
-                      color: kCicleColor,
-                    ),
-                  ),
-                  child: Card(
-                    color: kBackgroundColor,
-                    child: InkWell(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 10),
-                            child: CircleAvatar(
-                              backgroundColor: kCicleColor,
-                              radius: 40,
-                              backgroundImage: AssetImage("assets/icons/user2.png"),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 15),
-                            child: Column(children: [
-                              Text("Create Avatar",
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: kFontPrimaryColor)),
-                              Text("And setting wallet",
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400,
-                                      color: kFontTextColor)),
-                            ]),
-                          ),
-                        ],
-                      ),
-                      onTap: () => {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (BuildContext context) => SignUp(
-                              cameraDescription: cameraDescription,
-                            ),
-                          ),
-                        ),
-                      },
-                    ),
-                  ),
-                ),
-              ),
+              // Container(
+              //   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+              //   child: Container(
+              //     decoration: BoxDecoration(
+              //       borderRadius: BorderRadius.circular(20),
+              //       border: Border.all(
+              //         color: kCicleColor,
+              //       ),
+              //     ),
+              //     child: Card(
+              //       color: kBackgroundColor,
+              //       child: InkWell(
+              //         child: Row(
+              //           children: [
+              //             Padding(
+              //               padding: const EdgeInsets.symmetric(
+              //                   horizontal: 10, vertical: 10),
+              //               child: CircleAvatar(
+              //                 backgroundColor: kCicleColor,
+              //                 radius: 40,
+              //                 backgroundImage: AssetImage("assets/icons/user2.png"),
+              //               ),
+              //             ),
+              //             Padding(
+              //               padding: const EdgeInsets.symmetric(horizontal: 15),
+              //               child: Column(children: [
+              //                 Text("Create Avatar",
+              //                     style: TextStyle(
+              //                         fontSize: 20,
+              //                         fontWeight: FontWeight.bold,
+              //                         color: kFontPrimaryColor)),
+              //                 Text("And setting wallet",
+              //                     style: TextStyle(
+              //                         fontSize: 14,
+              //                         fontWeight: FontWeight.w400,
+              //                         color: kFontTextColor)),
+              //               ]),
+              //             ),
+              //           ],
+              //         ),
+              //         onTap: () => {
+              //           Navigator.push(
+              //             context,
+              //             MaterialPageRoute(
+              //               builder: (BuildContext context) => SignUp(
+              //                 cameraDescription: cameraDescription,
+              //               ),
+              //             ),
+              //           ),
+              //         },
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              SizedBox(height: 15,),
               Column(
                 children: [
                   Container(
@@ -781,73 +782,73 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-                  Container(
-                    height: size.height * 0.08,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: kCicleColor,
-                    ),
-                    child: FlatButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context, MaterialPageRoute(builder: (context) => Trade()));
-                      },
-                      child: Text(
-                        "TRADE",
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
+                  // Container(
+                  //   height: size.height * 0.08,
+                  //   width: double.infinity,
+                  //   decoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(16),
+                  //     color: kCicleColor,
+                  //   ),
+                  //   child: FlatButton(
+                  //     onPressed: () {
+                  //       Navigator.push(
+                  //         context, MaterialPageRoute(builder: (context) => Trade()));
+                  //     },
+                  //     child: Text(
+                  //       "TRADE",
+                  //       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
+                  //     ),
+                  //   ),
+                  // ),
+                  // SizedBox(
+                  //   height: 10,
+                  // ),
 
-                  Container(
-                    height: size.height * 0.08,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: kCicleColor,
-                    ),
-                    child: FlatButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context, MaterialPageRoute(builder: (context) => Wallet()));
-                      },
-                      child: Text(
-                        "WALLET",
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
-                      ),
-                    ),
-                  ),
+                  // Container(
+                  //   height: size.height * 0.08,
+                  //   width: double.infinity,
+                  //   decoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(16),
+                  //     color: kCicleColor,
+                  //   ),
+                  //   child: FlatButton(
+                  //     onPressed: () {
+                  //       Navigator.push(
+                  //         context, MaterialPageRoute(builder: (context) => Wallet()));
+                  //     },
+                  //     child: Text(
+                  //       "WALLET",
+                  //       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
+                  //     ),
+                  //   ),
+                  // ),
 
-                  SizedBox(
-                    height: 15,
-                  ),
+                  // SizedBox(
+                  //   height: 15,
+                  // ),
 
-                  Container(
-                    height: size.height * 0.08,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: kCicleColor,
-                    ),
-                    child: FlatButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context, MaterialPageRoute(builder: (context) => Shop()));
-                      },
-                      child: Text(
-                        "SHOP",
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
-                      ),
-                    ),
-                  ),
+                  // Container(
+                  //   height: size.height * 0.08,
+                  //   width: double.infinity,
+                  //   decoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(16),
+                  //     color: kCicleColor,
+                  //   ),
+                  //   child: FlatButton(
+                  //     onPressed: () {
+                  //       Navigator.push(
+                  //         context, MaterialPageRoute(builder: (context) => Shop()));
+                  //     },
+                  //     child: Text(
+                  //       "SHOP",
+                  //       style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
+                  //     ),
+                  //   ),
+                  // ),
 
-                  SizedBox(
-                    height: 40,
-                  ),
+                  // SizedBox(
+                  //   height: 40,
+                  // ),
                 ],
               ),
             ],

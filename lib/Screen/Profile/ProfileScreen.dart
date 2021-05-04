@@ -1,3 +1,4 @@
+import 'package:CABRIVE/Screen/Avartar/AvartarScreen.dart';
 import 'package:CABRIVE/Screen/Profile/ProfileSetting.dart';
 import 'package:CABRIVE/Screen/Widgets/NavigationBar.dart';
 import 'package:CABRIVE/constants.dart';
@@ -136,8 +137,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     child: FlatButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //   context, MaterialPageRoute(builder: (context) => Wallet()));
+                        Navigator.push(
+                          context, MaterialPageRoute(builder: (context) => AvartarScreen()));
                       },
                       child: Text(
                         "Edit Avata",
@@ -155,7 +156,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         width: 100,
                         //color: Colors.blue,
                         //child: SvgPicture.asset("assets/images/Men-shirt-white.svg"),
-                        child: Image.asset("assets/images/Men-shirt-white.png"),
+                        child: Image.asset("assets/charactor/Men.png", fit: BoxFit.fill,),
                       ),
                     ),
                   ],

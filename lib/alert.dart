@@ -1,5 +1,9 @@
 import 'package:CABRIVE/Screen/Home/HomeScreen.dart';
 import 'package:CABRIVE/constants.dart';
+import 'package:CABRIVE/pages/sign-up.dart';
+import 'package:CABRIVE/services/camera.service.dart';
+import 'package:CABRIVE/services/facenet.service.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:CABRIVE/Screen/Widgets/LoginPin.dart';
@@ -16,6 +20,7 @@ String secoundfaceScan1ID = "consectetur adipiscing elit, sed";
 
 String fingerID = "assets/icons/Finger scan.svg";
 String facePic = "assets/icons/face_ID.png";
+CameraDescription cameraDescription;
 
 class Constants {
   Constants._();
@@ -232,6 +237,16 @@ faceScandialog(
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => LoginPin()));
+                    //FaceNetService();
+                    //CameraService();
+                    // Navigator.push(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //         builder: (BuildContext context) => SignUp(
+                    //           cameraDescription: cameraDescription,
+                    //         ),
+                    //       ),
+                    //     );
                   },
                   child: Text("USE TOUCH ID",
                       style: TextStyle(

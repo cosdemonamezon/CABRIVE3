@@ -12,6 +12,7 @@ import 'package:intl/intl.dart' show DateFormat;
 
 import 'package:CABRIVE/Screen/Widgets/NavigationBar.dart';
 import 'package:CABRIVE/Screen/Calendar/ScheduleDetail.dart';
+import 'package:CABRIVE/Screen/Calendar/CalendarOne.dart';
 
 class CalendarScreen extends StatefulWidget {
   CalendarScreen({Key key}) : super(key: key);
@@ -74,6 +75,9 @@ class _CalendarScreenState extends State<CalendarScreen> {
       onDayPressed: (DateTime date, List<Event> events) {
         this.setState(() => _currentDate = date);
         events.forEach((event) => print(event.title));
+        //print('long pressed date ');
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => CalendarOne()));
       },
       weekendTextStyle: TextStyle(
         color: Colors.white,
@@ -132,6 +136,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
       onDayPressed: (DateTime date, List<Event> events) {
         this.setState(() => _currentDate2 = date);
         events.forEach((event) => print(event.title));
+        print('long pressed date ');
       },
       daysHaveCircularBorder: true,
       showOnlyCurrentMonthDate: false,
@@ -194,6 +199,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
         this.setState(() {
           _targetDateTime = date;
           _currentMonth = DateFormat.yMMM().format(_targetDateTime);
+          print('long pressed date $date');
         });
       },
       onDayLongPressed: (DateTime date) {
@@ -325,10 +331,23 @@ class _CalendarScreenState extends State<CalendarScreen> {
                     Text(
                       "Schedule",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: kFontPrimaryColor),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: kFontPrimaryColor),
                     ),
+                    // GestureDetector(
+                    //   onTap: () {
+                    //     Navigator.push(
+                    //         context,
+                    //         MaterialPageRoute(
+                    //             builder: (context) => CalendarOne()));
+                    //   },
+                    //   child: Container(
+                    //     height: 20,
+                    //     width: 60,
+                    //     color: Colors.redAccent,
+                    //   ),
+                    // ),
                   ],
                 ),
                 SizedBox(
@@ -428,8 +447,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 Column(
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 7),
                       child: Column(
                         children: [
                           Container(
@@ -480,8 +499,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
         children: [
           GestureDetector(
             onTap: () {
+              // Navigator.push(context,
+              //     MaterialPageRoute(builder: (context) => Buyticket()));
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Buyticket()));
+                  MaterialPageRoute(builder: (context) => ScheduleDetail()));
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

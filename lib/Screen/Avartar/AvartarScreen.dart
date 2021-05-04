@@ -1,3 +1,4 @@
+import 'package:CABRIVE/Screen/Home/Shop.dart';
 import 'package:CABRIVE/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -226,7 +227,7 @@ class _AvartarScreenState extends State<AvartarScreen> {
                     _pc2.open();
                   },
                   child: Text(
-                    "EDIT".toUpperCase(),
+                    "CUSTOM".toUpperCase(),
                     style: TextStyle(
                       fontSize: 18.0,
                     ),
@@ -241,7 +242,7 @@ class _AvartarScreenState extends State<AvartarScreen> {
                       side: BorderSide(color: kButtonColor)),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                        MaterialPageRoute(builder: (context) => Shop()));
                   },
                   color: kButtonColor,
                   textColor: kTextButtonColor,

@@ -1,3 +1,4 @@
+import 'package:CABRIVE/Screen/Home/Wallet2.dart';
 import 'package:CABRIVE/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -263,8 +264,8 @@ class _TopupState extends State<Topup> {
                     ),
                     child: FlatButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //   context, MaterialPageRoute(builder: (context) => Wallet()));
+                        Navigator.push(
+                          context, MaterialPageRoute(builder: (context) => Wallet2()));
                       },
                       child: Text(
                         "BUY",

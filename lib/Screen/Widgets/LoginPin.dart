@@ -73,7 +73,16 @@ class _LoginPinState extends State<LoginPin> {
                     onPressed: (){}
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 10),
+                Center(
+                  child: Text(
+                    "Enter your passcode", 
+                    style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                          color: kFontPrimaryColor),),
+                ),
+                SizedBox(height: 10),
                 Numberpad(
                   length: length,
                   onChange: onChange,

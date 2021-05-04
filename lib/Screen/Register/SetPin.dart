@@ -13,7 +13,7 @@ class SetPin extends StatefulWidget {
 }
 
 class _SetPinState extends State<SetPin> {
-  int length = 4;
+  int length = 6;
   onChange(String number){
     if(number.length == length){
       // if (number == "123456") {
