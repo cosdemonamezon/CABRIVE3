@@ -137,7 +137,7 @@ class _ShopState extends State<Shop> {
                   ),
                   Positioned(
                     right: 10,
-                    top: 333,
+                    top: 280,
                     child: GestureDetector(
                       onTap: () {
                         Navigator.push(context,

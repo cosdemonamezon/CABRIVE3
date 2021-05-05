@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Container(
                       height: 230,
                       width: 230,
-                      child: Image.asset("assets/logo/token_select.png"),
+                      child: Image.asset("assets/logo/token-110Coin.png"),
                     ),
                   ),
                 ),
