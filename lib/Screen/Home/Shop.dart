@@ -127,7 +127,7 @@ class _ShopState extends State<Shop> {
                               builder: (context) => ShopDetail()));
                     },
                     child: Container(
-                      height: height,
+                      height: height*0.8,
                       width: width,
                       child: Image.asset(
                         "assets/shop.png",
@@ -137,7 +137,7 @@ class _ShopState extends State<Shop> {
                   ),
                   Positioned(
                     right: 10,
-                    top: 220,
+                    top: 333,
                     child: GestureDetector(
                       onTap: () {
                         Navigator.push(context,

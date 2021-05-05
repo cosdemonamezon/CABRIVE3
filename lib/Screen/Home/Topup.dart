@@ -264,8 +264,8 @@ class _TopupState extends State<Topup> {
                     ),
                     child: FlatButton(
                       onPressed: () {
-                        Navigator.push(
-                          context, MaterialPageRoute(builder: (context) => Wallet2()));
+                        // Navigator.push(
+                        //   context, MaterialPageRoute(builder: (context) => Wallet2()));
                       },
                       child: Text(
                         "BUY",
