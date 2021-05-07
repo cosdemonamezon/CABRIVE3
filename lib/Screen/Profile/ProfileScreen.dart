@@ -141,7 +141,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           context, MaterialPageRoute(builder: (context) => AvartarScreen()));
                       },
                       child: Text(
-                        "Edit Avata",
+                        "Digital Commercials",
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
                       ),
                     ),

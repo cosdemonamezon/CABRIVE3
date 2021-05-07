@@ -27,7 +27,7 @@ class _ShopDetailState extends State<ShopDetail> {
         title: Text("SHOP"),
       ),
       body: Container(
-        color: kInputSearchColor,
+        color: kTextButtonColor,
         height: height,
         padding: EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(
@@ -46,7 +46,7 @@ class _ShopDetailState extends State<ShopDetail> {
               Container(
                 height: 120,
                 decoration: BoxDecoration(
-                  color: kTextButtonColor,
+                  color: kInputSearchColor,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(18),
                     topRight: Radius.circular(18),
@@ -57,21 +57,34 @@ class _ShopDetailState extends State<ShopDetail> {
                 child: Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Container(
                         height: 85,
                         width: 85,
-                        color: kHintextColor,
+                        //color: kHintextColor,
+                        child: Image.asset("assets/logo/shop1.png", fit: BoxFit.cover,),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 30),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "Lorem Ipsum",
                             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: kLinkTextColor)
+                          ),
+                          Text(
+                            "We and our partners store",
+                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: kLinkTextColor)
+                          ),
+                          Text(
+                            "and access information on device,",
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: kLinkTextColor)
+                          ),
+                          Text(
+                            "such as cookies and process personal",
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: kLinkTextColor)
                           ),
                         ],
                       ),
@@ -83,7 +96,7 @@ class _ShopDetailState extends State<ShopDetail> {
               Container(
                 height: 120,
                 decoration: BoxDecoration(
-                  color: kTextButtonColor,
+                  color: kInputSearchColor,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(18),
                     topRight: Radius.circular(18),
@@ -94,21 +107,34 @@ class _ShopDetailState extends State<ShopDetail> {
                 child: Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Container(
                         height: 83,
                         width: 83,
-                        color: kHintextColor,
+                        //color: kHintextColor,
+                        child: Image.asset("assets/logo/shop2.png", fit: BoxFit.cover,),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 30),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "Lorem Ipsum",
                             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: kLinkTextColor)
+                          ),
+                          Text(
+                            "We and our partners store",
+                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: kLinkTextColor)
+                          ),
+                          Text(
+                            "and access information on device,",
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: kLinkTextColor)
+                          ),
+                          Text(
+                            "such as cookies and process personal",
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: kLinkTextColor)
                           ),
                         ],
                       ),
@@ -120,7 +146,7 @@ class _ShopDetailState extends State<ShopDetail> {
               Container(
                 height: 120,
                 decoration: BoxDecoration(
-                  color: kTextButtonColor,
+                  color: kInputSearchColor,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(18),
                     topRight: Radius.circular(18),
@@ -131,21 +157,34 @@ class _ShopDetailState extends State<ShopDetail> {
                 child: Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Container(
                         height: 85,
                         width: 85,
-                        color: kHintextColor,
+                        //color: kHintextColor,
+                        child: Image.asset("assets/logo/shop3.png", fit: BoxFit.cover,),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 30),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "Lorem Ipsum",
                             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: kLinkTextColor)
+                          ),
+                          Text(
+                            "We and our partners store",
+                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: kLinkTextColor)
+                          ),
+                          Text(
+                            "and access information on device,",
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: kLinkTextColor)
+                          ),
+                          Text(
+                            "such as cookies and process personal",
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: kLinkTextColor)
                           ),
                         ],
                       ),
@@ -157,7 +196,7 @@ class _ShopDetailState extends State<ShopDetail> {
               Container(
                 height: 120,
                 decoration: BoxDecoration(
-                  color: kTextButtonColor,
+                  color: kInputSearchColor,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(18),
                     topRight: Radius.circular(18),
@@ -168,21 +207,34 @@ class _ShopDetailState extends State<ShopDetail> {
                 child: Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Container(
                         height: 85,
                         width: 85,
-                        color: kHintextColor,
+                        //color: kHintextColor,
+                        child: Image.asset("assets/logo/shop4.png", fit: BoxFit.fill,),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 30),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "Lorem Ipsum",
                             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: kLinkTextColor)
+                          ),
+                          Text(
+                            "We and our partners store",
+                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: kLinkTextColor)
+                          ),
+                          Text(
+                            "and access information on device,",
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: kLinkTextColor)
+                          ),
+                          Text(
+                            "such as cookies and process personal",
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: kLinkTextColor)
                           ),
                         ],
                       ),
