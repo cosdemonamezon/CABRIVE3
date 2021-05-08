@@ -135,7 +135,9 @@ class _HomeScreenState extends State<HomeScreen> {
               //     ),
               //   ),
               // ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               Column(
                 children: [
                   Container(
@@ -178,7 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: 20,
                         ),
                         GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -267,7 +269,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: 20,
                         ),
                         GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -394,7 +396,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -427,7 +429,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -469,7 +471,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -566,7 +568,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         GestureDetector(
                           onTap: () {
                             Navigator.push(
-                              context, MaterialPageRoute(builder: (context) => SportScreen()));
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SportScreen()));
                           },
                           child: Text("SEE ALL >",
                               style: TextStyle(
@@ -583,9 +587,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Navigator.push(
-                              context, MaterialPageRoute(builder: (context) => SportScreen()));
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SportScreen()));
                       },
                       child: Container(
                         height: 150,
@@ -690,9 +696,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     GestureDetector(
                                       onTap: () {
                                         Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => PromotionScreen()));
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    PromotionScreen()));
                                       },
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.only(
@@ -751,9 +758,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     GestureDetector(
                                       onTap: () {
                                         Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => PromotionScreen()));
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    PromotionScreen()));
                                       },
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.only(
@@ -773,9 +781,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ],
                                 ),
                               ),
-
-                              SizedBox(height: 20,),
-              
+                              SizedBox(
+                                height: 20,
+                              ),
                             ],
                           ),
                         ),
