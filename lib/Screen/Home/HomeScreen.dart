@@ -82,60 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 "assets/87976479_2856061841103856_1014097372642279424_o.png",
                 fit: BoxFit.contain,
               ),
-              // Container(
-              //   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-              //   child: Container(
-              //     decoration: BoxDecoration(
-              //       borderRadius: BorderRadius.circular(20),
-              //       border: Border.all(
-              //         color: kCicleColor,
-              //       ),
-              //     ),
-              //     child: Card(
-              //       color: kBackgroundColor,
-              //       child: InkWell(
-              //         child: Row(
-              //           children: [
-              //             Padding(
-              //               padding: const EdgeInsets.symmetric(
-              //                   horizontal: 10, vertical: 10),
-              //               child: CircleAvatar(
-              //                 backgroundColor: kCicleColor,
-              //                 radius: 40,
-              //                 backgroundImage: AssetImage("assets/icons/user2.png"),
-              //               ),
-              //             ),
-              //             Padding(
-              //               padding: const EdgeInsets.symmetric(horizontal: 15),
-              //               child: Column(children: [
-              //                 Text("Create Avatar",
-              //                     style: TextStyle(
-              //                         fontSize: 20,
-              //                         fontWeight: FontWeight.bold,
-              //                         color: kFontPrimaryColor)),
-              //                 Text("And setting wallet",
-              //                     style: TextStyle(
-              //                         fontSize: 14,
-              //                         fontWeight: FontWeight.w400,
-              //                         color: kFontTextColor)),
-              //               ]),
-              //             ),
-              //           ],
-              //         ),
-              //         onTap: () => {
-              //           Navigator.push(
-              //             context,
-              //             MaterialPageRoute(
-              //               builder: (BuildContext context) => SignUp(
-              //                 cameraDescription: cameraDescription,
-              //               ),
-              //             ),
-              //           ),
-              //         },
-              //       ),
-              //     ),
-              //   ),
-              // ),
+              
               SizedBox(height: 15,),
               Column(
                 children: [
@@ -402,8 +349,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     builder: (context) => StadiumScreen()));
                           },
                           child: Container(
-                            height: 110,
-                            width: 180,
+                            height: height*0.14,
+                            width: width*0.44,
                             //color: Colors.red,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.only(
@@ -435,8 +382,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     builder: (context) => StadiumScreen()));
                           },
                           child: Container(
-                            height: 110,
-                            width: 180,
+                            height: height*0.14,
+                            width: width*0.44,
                             //color: Colors.green,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.only(
@@ -477,8 +424,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     builder: (context) => StadiumScreen()));
                           },
                           child: Container(
-                            height: 110,
-                            width: 180,
+                            height: height*0.14,
+                            width: width*0.44,
                             //color: Colors.red,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.only(
@@ -510,8 +457,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     builder: (context) => StadiumScreen()));
                           },
                           child: Container(
-                            height: 110,
-                            width: 180,
+                            height: height*0.14,
+                            width: width*0.44,
                             //color: Colors.green,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.only(
