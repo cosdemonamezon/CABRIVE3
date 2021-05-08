@@ -544,7 +544,8 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 Center(
                                   child: Container(
                                     height: 100,
-                                    width: 100,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.25,
                                     child: Image.asset(
                                         "assets/charactor/face-00.png"),
                                   ),
@@ -552,7 +553,8 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 Center(
                                   child: Container(
                                     height: 100,
-                                    width: 100,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.25,
                                     child: Image.asset(
                                         "assets/charactor/face-00.png"),
                                   ),
@@ -560,7 +562,8 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 Center(
                                   child: Container(
                                     height: 100,
-                                    width: 100,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.25,
                                     child: Image.asset(
                                         "assets/charactor/face-00.png"),
                                   ),
@@ -568,7 +571,8 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 Center(
                                   child: Container(
                                     height: 100,
-                                    width: 100,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.25,
                                     child: Image.asset(
                                         "assets/charactor/face-00.png"),
                                   ),
@@ -583,7 +587,9 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                     Center(
                                       child: Container(
                                         height: 100,
-                                        width: 100,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.25,
                                         child: Image.asset(
                                             "assets/charactor/sh1.png"),
                                       ),
@@ -591,7 +597,9 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                     Center(
                                       child: Container(
                                         height: 100,
-                                        width: 100,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.25,
                                         child: Image.asset(
                                             "assets/charactor/sh2.png"),
                                       ),
@@ -599,7 +607,9 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                     Center(
                                       child: Container(
                                         height: 100,
-                                        width: 100,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.25,
                                         child: Image.asset(
                                             "assets/charactor/sh3.png"),
                                       ),
@@ -607,7 +617,9 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                     Center(
                                       child: Container(
                                         height: 100,
-                                        width: 100,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.25,
                                         child: Image.asset(
                                             "assets/charactor/sh4.png"),
                                       ),
@@ -625,7 +637,8 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 Center(
                                   child: Container(
                                     height: 100,
-                                    width: 100,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.25,
                                     child: Image.asset(
                                         "assets/charactor/face-00.png"),
                                   ),
@@ -633,7 +646,8 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 Center(
                                   child: Container(
                                     height: 100,
-                                    width: 100,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.25,
                                     child: Image.asset(
                                         "assets/charactor/face-00.png"),
                                   ),
@@ -641,7 +655,8 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 Center(
                                   child: Container(
                                     height: 100,
-                                    width: 100,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.25,
                                     child: Image.asset(
                                         "assets/charactor/face-00.png"),
                                   ),
@@ -649,7 +664,8 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 Center(
                                   child: Container(
                                     height: 100,
-                                    width: 100,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.25,
                                     child: Image.asset(
                                         "assets/charactor/face-00.png"),
                                   ),
@@ -664,7 +680,9 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                     Center(
                                       child: Container(
                                         height: 100,
-                                        width: 100,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.25,
                                         child: Image.asset(
                                             "assets/charactor/sh5.png"),
                                       ),
@@ -672,7 +690,9 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                     Center(
                                       child: Container(
                                         height: 100,
-                                        width: 100,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.25,
                                         child: Image.asset(
                                             "assets/charactor/sh6.png"),
                                       ),
@@ -680,7 +700,9 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                     Center(
                                       child: Container(
                                         height: 100,
-                                        width: 100,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.25,
                                         child: Image.asset(
                                             "assets/charactor/sh7.png"),
                                       ),
@@ -688,7 +710,9 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                     Center(
                                       child: Container(
                                         height: 100,
-                                        width: 100,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.25,
                                         child: Image.asset(
                                             "assets/charactor/sh8.png"),
                                       ),
@@ -706,7 +730,8 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 Center(
                                   child: Container(
                                     height: 100,
-                                    width: 100,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.25,
                                     child: Image.asset(
                                         "assets/charactor/face-00.png"),
                                   ),
@@ -714,7 +739,8 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 Center(
                                   child: Container(
                                     height: 100,
-                                    width: 100,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.25,
                                     child: Image.asset(
                                         "assets/charactor/face-00.png"),
                                   ),
@@ -722,7 +748,8 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 Center(
                                   child: Container(
                                     height: 100,
-                                    width: 100,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.25,
                                     child: Image.asset(
                                         "assets/charactor/face-00.png"),
                                   ),
@@ -730,7 +757,8 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                 Center(
                                   child: Container(
                                     height: 100,
-                                    width: 100,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.25,
                                     child: Image.asset(
                                         "assets/charactor/face-00.png"),
                                   ),
@@ -745,7 +773,9 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                     Center(
                                       child: Container(
                                         height: 100,
-                                        width: 100,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.25,
                                         child: Image.asset(
                                             "assets/charactor/sh9.png"),
                                       ),
@@ -753,7 +783,9 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                     Center(
                                       child: Container(
                                         height: 100,
-                                        width: 100,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.25,
                                         child: Image.asset(
                                             "assets/charactor/sh10.png"),
                                       ),
@@ -761,7 +793,9 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                     Center(
                                       child: Container(
                                         height: 100,
-                                        width: 100,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.25,
                                         child: Image.asset(
                                             "assets/charactor/sh11.png"),
                                       ),
@@ -769,7 +803,9 @@ class _AvartarScreenState extends State<AvartarScreen> {
                                     Center(
                                       child: Container(
                                         height: 100,
-                                        width: 100,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.25,
                                         child: Image.asset(
                                             "assets/charactor/sh12.png"),
                                       ),

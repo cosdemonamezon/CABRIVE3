@@ -1,3 +1,4 @@
+import 'package:CABRIVE/Screen/Avartar/AvartarScreen.dart';
 import 'package:CABRIVE/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,15 +16,18 @@ class _StadiumScreenState extends State<StadiumScreen> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios), 
-          onPressed: (){
-            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomeScreen()), (route) => false);
-          }
-        ),
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                  (route) => false);
+            }),
         centerTitle: true,
         title: Text("STADIUM"),
       ),
@@ -40,13 +44,10 @@ class _StadiumScreenState extends State<StadiumScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       buildContainer(
-                        "assets/FIFA_World_Cup_2010_Mexico_VS_South_Africa.jpg",
-                        "FNB"
-                      ),
+                          "assets/FIFA_World_Cup_2010_Mexico_VS_South_Africa.jpg",
+                          "FNB"),
                       buildContainer(
-                        "assets/State_of_Origin_Game_II_2018.jpg",
-                        "ANZ"
-                      ),
+                          "assets/State_of_Origin_Game_II_2018.jpg", "ANZ"),
                     ],
                   ),
                 ),
@@ -56,82 +57,65 @@ class _StadiumScreenState extends State<StadiumScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       buildContainer(
-                        "assets/Stade_de_Twickenham_à_Londres.jpg",
-                        "TWICKENHAM"
-                      ),
+                          "assets/Stade_de_Twickenham_à_Londres.jpg",
+                          "TWICKENHAM"),
                       buildContainerTwo(
-                        "assets/StadeFranceNationsLeague2018.jpg",
-                        "STADE DE",
-                        "FRANCE"
-                      ),
+                          "assets/StadeFranceNationsLeague2018.jpg",
+                          "STADE DE",
+                          "FRANCE"),
                     ],
                   ),
                 ),
-
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      buildContainer("assets/Stadio_Olimpico_2008.jpeg",
+                          "STADIO OLIMPICO"),
+                      buildContainer(
+                          "assets/FIFA_World_Cup_2010_Mexico_VS_South_Africa.jpg",
+                          "MILLENNIUM"),
+                    ],
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       buildContainer(
-                        "assets/Stadio_Olimpico_2008.jpeg",
-                        "STADIO OLIMPICO"
-                      ),
+                          "assets/Murrayfield_Stadium_2005-05-13.jpg",
+                          "MURRAYFIELD"),
                       buildContainer(
-                        "assets/FIFA_World_Cup_2010_Mexico_VS_South_Africa.jpg",
-                        "MILLENNIUM"
-                      ),
+                          "assets/FIFA_World_Cup_2010_Slovakia_Italy.jpg",
+                          "ELLIS PARK"),
                     ],
                   ),
                 ),
-
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       buildContainer(
-                        "assets/Murrayfield_Stadium_2005-05-13.jpg",
-                        "MURRAYFIELD"
-                      ),
-                      buildContainer(
-                        "assets/FIFA_World_Cup_2010_Slovakia_Italy.jpg",
-                        "ELLIS PARK"
-                      ),
+                          "assets/Soldier_field_2006.jpg", "SOLDIER FIELD"),
+                      buildContainer("assets/Stade_Vélodrome_(20150405).jpg",
+                          "STADE VELODROME"),
                     ],
                   ),
                 ),
-
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       buildContainer(
-                        "assets/Soldier_field_2006.jpg",
-                        "SOLDIER FIELD"
-                      ),
+                          "assets/E37_Perth_Stadium_Open_Day_089.jpeg",
+                          "PERTH"),
                       buildContainer(
-                        "assets/Stade_Vélodrome_(20150405).jpg",
-                        "STADE VELODROME"
-                      ),
-                    ],
-                  ),
-                ),
-
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      buildContainer(
-                        "assets/E37_Perth_Stadium_Open_Day_089.jpeg",
-                        "PERTH"
-                      ),
-                      buildContainer(
-                        "assets/Marvel_Stadium_from_an_aerial_perspective._Feb_2019.jpg",
-                        "DOCKLANDS"
-                      ),
+                          "assets/Marvel_Stadium_from_an_aerial_perspective._Feb_2019.jpg",
+                          "DOCKLANDS"),
                     ],
                   ),
                 ),
@@ -145,16 +129,16 @@ class _StadiumScreenState extends State<StadiumScreen> {
 
   // Navigator.push(
   //   context, MaterialPageRoute(builder: (context) => StadiumScreen()));
-  Container buildContainer(String img,  String title) {
+  Container buildContainer(String img, String title) {
     return Container(
       child: GestureDetector(
-        onTap: (){
-          Navigator.push(
-            context, MaterialPageRoute(builder: (context) => StadiumDetail()));
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => StadiumDetail()));
         },
         child: Container(
-          height: 110,
-          width: 180,
+          height: height * 1.5,
+          width: width * 0.44,
           //color: Colors.red,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
@@ -169,64 +153,60 @@ class _StadiumScreenState extends State<StadiumScreen> {
             ),
           ),
           child: Center(
-            child: Text(
-              title,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: kFontPrimaryColor)
-            ),
+            child: Text(title,
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: kFontPrimaryColor)),
           ),
         ),
       ),
     );
   }
 
-  Container buildContainerTwo(String img,  String title, String subtitle) {
-      return Container(
-        child: GestureDetector(
-          onTap: (){
-            Navigator.push(
-              context, MaterialPageRoute(builder: (context) => StadiumDetail()));
-          },
-            child: Container(
-            height: 110,
-            width: 180,
-            //color: Colors.red,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(18),
-                topRight: Radius.circular(18),
-                bottomLeft: Radius.circular(18),
-                bottomRight: Radius.circular(18),
-              ),
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage(img),
-              ),
+  Container buildContainerTwo(String img, String title, String subtitle) {
+    return Container(
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => StadiumDetail()));
+        },
+        child: Container(
+          height: 110,
+          width: width * 0.44,
+          //color: Colors.red,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(18),
+              topRight: Radius.circular(18),
+              bottomLeft: Radius.circular(18),
+              bottomRight: Radius.circular(18),
             ),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    title,
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage(img),
+            ),
+          ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(title,
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: kFontPrimaryColor)),
-                  Text(
-                    subtitle,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: kFontPrimaryColor)),
+                Text(subtitle,
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: kFontPrimaryColor)),
-                ],
-              ),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: kFontPrimaryColor)),
+              ],
             ),
           ),
         ),
-      );
-    }
+      ),
+    );
+  }
 }

@@ -14,80 +14,82 @@ class _PromotionScreenState extends State<PromotionScreen> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios), 
-          onPressed: (){
-            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomeScreen()), (route) => false);
-          }
-        ),
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                  (route) => false);
+            }),
         centerTitle: true,
         title: Text("PROMOTION"),
       ),
       body: Container(
-            height: height,
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: SingleChildScrollView(
-                          child: Column(
-                children: [
-                  SizedBox(height: 20,),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: kBackgroundColor,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(18),
-                        topRight: Radius.circular(18),
-                        bottomLeft: Radius.circular(18),
-                        bottomRight: Radius.circular(18),
-                      ),
-                    ),
-                    child: buildCard(
-                      "assets/131982946_3631407893569243_1613121772109122784_n.jpg",
-                      "#BoxingDayRugby",
-                      "“𝐋𝐞 𝐓𝐎𝐏 𝟏𝟒 𝐜𝐨𝐮𝐥𝐞𝐮𝐫𝐬 𝐝𝐞 𝐧𝐨𝐬 𝐬𝐨𝐢𝐠𝐧𝐚𝐧𝐭𝐬”",
-                      "…See more"
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: kBackgroundColor,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(18),
-                        topRight: Radius.circular(18),
-                        bottomLeft: Radius.circular(18),
-                        bottomRight: Radius.circular(18),
-                      ),
-                    ),
-                    child: buildCard(
-                      "assets/131948114_3624474260929273_4187310378479201958_o.jpg",
-                      "⚫ ZOUZOU ⚪",
-                      "La mascotte préféréedu Top 14 arrive a",
-                      "…See more"
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: kBackgroundColor,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(18),
-                        topRight: Radius.circular(18),
-                        bottomLeft: Radius.circular(18),
-                        bottomRight: Radius.circular(18),
-                      ),
-                    ),
-                    child: buildCard(
-                      "assets/131935758_3624002657643100_2330089908347051597_n.jpg",
-                      "#BoxingDayRugby",
-                      "“𝐋𝐞 𝐓𝐎𝐏 𝟏𝟒 𝐚𝐮𝐱 𝐜𝐨𝐮𝐥𝐞𝐮𝐫𝐬 𝐝𝐞 𝐧𝐨𝐬 𝐬𝐨𝐢𝐠𝐧𝐚𝐧𝐭𝐬”",
-                      "…See more"
-                    ),
-                  ),
-                ],
+        height: height,
+        padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 20,
               ),
-            ),
+              Container(
+                decoration: BoxDecoration(
+                  color: kBackgroundColor,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(18),
+                    topRight: Radius.circular(18),
+                    bottomLeft: Radius.circular(18),
+                    bottomRight: Radius.circular(18),
+                  ),
+                ),
+                child: buildCard(
+                    "assets/131982946_3631407893569243_1613121772109122784_n.jpg",
+                    "#BoxingDayRugby",
+                    "“𝐋𝐞 𝐓𝐎𝐏 𝟏𝟒 𝐜𝐨𝐮𝐥𝐞𝐮𝐫𝐬 𝐝𝐞 𝐧𝐨𝐬 𝐬𝐨𝐢𝐠𝐧𝐚𝐧𝐭𝐬”",
+                    "…See more"),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: kBackgroundColor,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(18),
+                    topRight: Radius.circular(18),
+                    bottomLeft: Radius.circular(18),
+                    bottomRight: Radius.circular(18),
+                  ),
+                ),
+                child: buildCard(
+                    "assets/131948114_3624474260929273_4187310378479201958_o.jpg",
+                    "⚫ ZOUZOU ⚪",
+                    "La mascotte préféréedu Top 14 arrive a",
+                    "…See more"),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: kBackgroundColor,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(18),
+                    topRight: Radius.circular(18),
+                    bottomLeft: Radius.circular(18),
+                    bottomRight: Radius.circular(18),
+                  ),
+                ),
+                child: buildCard(
+                    "assets/131935758_3624002657643100_2330089908347051597_n.jpg",
+                    "#BoxingDayRugby",
+                    "“𝐋𝐞 𝐓𝐎𝐏 𝟏𝟒 𝐚𝐮𝐱 𝐜𝐨𝐮𝐥𝐞𝐮𝐫𝐬 𝐝𝐞 𝐧𝐨𝐬 𝐬𝐨𝐢𝐠𝐧𝐚𝐧𝐭𝐬”",
+                    "…See more"),
+              ),
+            ],
           ),
+        ),
+      ),
     );
   }
 
@@ -98,17 +100,25 @@ class _PromotionScreenState extends State<PromotionScreen> {
       clipBehavior: Clip.antiAlias,
       child: Column(
         children: [
-          Image.asset(img),
+          Image.asset(
+            img,
+            fit: BoxFit.cover,
+          ),
           ListTile(
             title: Column(
               children: [
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
                       title,
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kFontPrimaryColor),
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: kFontPrimaryColor),
                     ),
                   ],
                 ),
@@ -117,7 +127,10 @@ class _PromotionScreenState extends State<PromotionScreen> {
                   children: [
                     Text(
                       subtitle1,
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kFontPrimaryColor),
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: kFontPrimaryColor),
                     ),
                   ],
                 ),
@@ -125,20 +138,27 @@ class _PromotionScreenState extends State<PromotionScreen> {
             ),
             subtitle: Column(
               children: [
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => DetailPromotion()));
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailPromotion()));
                         },
                         child: Text(
                           subtitle2,
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kCicleColor),
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: kCicleColor),
                         ),
                       ),
                     ],

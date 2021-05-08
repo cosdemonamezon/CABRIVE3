@@ -127,6 +127,7 @@ flutter:
     - assets/images/blue.png
     - assets/images/download.png
     - assets/images/coin.png
+    - assets/Stade_Vélodrome_(20150405).jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -18,12 +18,12 @@ class _LoginPinState extends State<LoginPin> {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => HomeScreen()));
         //print("number : "+ number);
-      } 
+      }
       // else if (number == "654321") {
       //   Navigator.push(
       //       context, MaterialPageRoute(builder: (context) => DashbordScreen()));
       //   //print("number : "+ number);
-      // } 
+      // }
       // else {
       //   Navigator.pushReplacement(context,
       //       MaterialPageRoute(builder: (BuildContext context) => super.widget));
@@ -40,8 +40,8 @@ class _LoginPinState extends State<LoginPin> {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        //title: Text("Login Pin"),
-      ),
+          //title: Text("Login Pin"),
+          ),
       body: Container(
         height: height,
         child: Container(
@@ -67,20 +67,20 @@ class _LoginPinState extends State<LoginPin> {
                 // ),
                 Center(
                   child: IconButton(
-                    iconSize: 60,
-                    color: kFontPrimaryColor,
-                    icon: Icon(Icons.lock), 
-                    onPressed: (){}
-                  ),
+                      iconSize: 60,
+                      color: kFontPrimaryColor,
+                      icon: Icon(Icons.lock),
+                      onPressed: () {}),
                 ),
                 SizedBox(height: 10),
                 Center(
                   child: Text(
-                    "Enter your passcode", 
+                    "Enter your passcode",
                     style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 20,
-                          color: kFontPrimaryColor),),
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                        color: kFontPrimaryColor),
+                  ),
                 ),
                 SizedBox(height: 10),
                 Numberpad(

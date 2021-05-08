@@ -15,10 +15,10 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   bool listSwith = false;
 
-
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -129,40 +129,44 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       // right: 30,
                       // left: 120,
                       child: Container(
-                    height: 50,
-                    width: 270,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: kCicleColor,
-                    ),
-                    child: FlatButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context, MaterialPageRoute(builder: (context) => AvartarScreen()));
-                      },
-                      child: Text(
-                        "Digital Commercials",
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
+                        height: height * 0.09,
+                        width: width * 0.62,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: kCicleColor,
+                        ),
+                        child: FlatButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AvartarScreen()));
+                          },
+                          child: Text("Digital Commercials",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: kTextButtonColor)),
+                        ),
                       ),
-                    ),
-                  ),
-                     
                     ),
                     Positioned(
                       right: 10.0,
                       top: 30.0,
                       child: Container(
-                        height: 220,
-                        width: 100,
+                        height: height * 0.36,
+                        width: width * 0.29,
                         //color: Colors.blue,
                         //child: SvgPicture.asset("assets/images/Men-shirt-white.svg"),
-                        child: Image.asset("assets/charactor/Men.png", fit: BoxFit.fill,),
+                        child: Image.asset(
+                          "assets/charactor/Men.png",
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-              
               SizedBox(
                 height: 10,
               ),
@@ -289,7 +293,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       fontSize: 18,
                                       color: kFontPrimaryColor),
                                 ),
-                                
                               ),
                             ],
                           ),

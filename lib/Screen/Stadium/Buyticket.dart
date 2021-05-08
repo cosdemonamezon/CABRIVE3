@@ -15,73 +15,97 @@ class _BuyticketState extends State<Buyticket> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios), 
-          onPressed: (){
-            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomeScreen()), (route) => false);
-          }
-        ),
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                  (route) => false);
+            }),
         centerTitle: true,
         title: Text("BUY TICKET"),
       ),
-      body: Container(
-          height: height,
+      body: SingleChildScrollView(
+        child: Container(
+          //height: height,
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 children: [
-                  Text(
-                    "Ticket Detail", style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: kFontPrimaryColor)
-                  ),
+                  Text("Ticket Detail",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: kFontPrimaryColor)),
                 ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 children: [
-                  Text(
-                    "Zone", 
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: kFontPrimaryColor)
+                  Text("Zone",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: kFontPrimaryColor)),
+                  SizedBox(
+                    width: 5,
                   ),
-                  SizedBox(width: 5,),
                   Container(
                     height: 13,
                     width: 40,
                     color: Colors.yellow[800],
                   ),
-                  SizedBox(width: 5,),
-                  Text(
-                    ", number 10", 
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: kFontPrimaryColor)
+                  SizedBox(
+                    width: 5,
                   ),
-                  SizedBox(width: 170,),
-                  Text(
-                    "120", 
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: kFontPrimaryColor)
+                  Text(", number 10",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: kFontPrimaryColor)),
+                  SizedBox(
+                    width: width * 0.38,
                   ),
+                  Text("120",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: kFontPrimaryColor)),
                 ],
               ),
-              SizedBox(height: 20,),
-              Divider(thickness: 3, color: kInputSearchColor,),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
+              Divider(
+                thickness: 3,
+                color: kInputSearchColor,
+              ),
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 children: [
-                  Text(
-                    "Payment Detail", style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: kFontPrimaryColor)
-                  ),
+                  Text("Payment Detail",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: kFontPrimaryColor)),
                 ],
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               Container(
                 height: 100,
                 decoration: BoxDecoration(
@@ -100,7 +124,7 @@ class _BuyticketState extends State<Buyticket> {
                       Container(
                         height: 45,
                         width: 41,
-                        decoration: BoxDecoration(                          
+                        decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage("assets/icons/wallet-01.png"),
@@ -116,19 +140,29 @@ class _BuyticketState extends State<Buyticket> {
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 15),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     "Wallet",
-                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: kFontPrimaryColor),
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                        color: kFontPrimaryColor),
                                   ),
-                                  Icon(Icons.check_circle, color: kButtonColor,),
+                                  Icon(
+                                    Icons.check_circle,
+                                    color: kButtonColor,
+                                  ),
                                 ],
                               ),
                             ),
                             Text(
                               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
-                              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12, color: kFontPrimaryColor),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                  color: kFontPrimaryColor),
                             ),
                           ],
                         ),
@@ -137,7 +171,9 @@ class _BuyticketState extends State<Buyticket> {
                   ),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Container(
                 height: 100,
                 decoration: BoxDecoration(
@@ -156,7 +192,7 @@ class _BuyticketState extends State<Buyticket> {
                       Container(
                         height: 45,
                         width: 41,
-                        decoration: BoxDecoration(                          
+                        decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.fill,
                             image: AssetImage("assets/icons/mastercard-01.png"),
@@ -172,19 +208,25 @@ class _BuyticketState extends State<Buyticket> {
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 15),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     "**** **** **** 4352",
-                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: kFontPrimaryColor),
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                        color: kFontPrimaryColor),
                                   ),
-                                  
                                 ],
                               ),
                             ),
                             Text(
                               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
-                              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12, color: kFontPrimaryColor),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                  color: kFontPrimaryColor),
                             ),
                           ],
                         ),
@@ -193,7 +235,9 @@ class _BuyticketState extends State<Buyticket> {
                   ),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Container(
                 height: 100,
                 decoration: BoxDecoration(
@@ -212,7 +256,7 @@ class _BuyticketState extends State<Buyticket> {
                       Container(
                         height: 45,
                         width: 41,
-                        decoration: BoxDecoration(                          
+                        decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.fill,
                             image: AssetImage("assets/icons/visa-01.png"),
@@ -228,19 +272,25 @@ class _BuyticketState extends State<Buyticket> {
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 15),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     "**** **** **** 4132",
-                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: kFontPrimaryColor),
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                        color: kFontPrimaryColor),
                                   ),
-                                  
                                 ],
                               ),
                             ),
                             Text(
                               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
-                              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12, color: kFontPrimaryColor),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                  color: kFontPrimaryColor),
                             ),
                           ],
                         ),
@@ -249,33 +299,48 @@ class _BuyticketState extends State<Buyticket> {
                   ),
                 ),
               ),
-              SizedBox(height: 40,),
+              SizedBox(
+                height: 40,
+              ),
               GestureDetector(
-                onTap: (){},
+                onTap: () {},
                 child: Center(
                   child: Text(
                     "Add card",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: kCicleColor),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: kCicleColor),
                   ),
                 ),
               ),
-              SizedBox(height: 35,),
+              SizedBox(
+                height: 35,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     "Total",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: kFontPrimaryColor),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                        color: kFontPrimaryColor),
                   ),
                   Text(
                     "120",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: kCicleColor),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                        color: kCicleColor),
                   ),
                 ],
               ),
-              SizedBox(height: 12,),
+              SizedBox(
+                height: 12,
+              ),
               Container(
-                height: size.height * 0.08,
+                height: height * 0.08,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
@@ -297,15 +362,17 @@ class _BuyticketState extends State<Buyticket> {
                     // Navigator.push(
                     //   context, MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
-                  child: Text(
-                    "BUY NOW",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
-                  ),
+                  child: Text("BUY NOW",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: kTextButtonColor)),
                 ),
               ),
             ],
           ),
         ),
+      ),
     );
   }
 }
