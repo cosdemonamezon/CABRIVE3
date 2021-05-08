@@ -74,12 +74,12 @@ class SignUpState extends State<SignUp> {
     print('onShot performed');
 
     if (faceDetected == null) {
-      showDialog(
-        context: context,
-        // child: AlertDialog(
-        //   content: Text('No face detected!'),
-        // )
-      );
+      // showDialog(
+      //   context: context,
+      //   // child: AlertDialog(
+      //   //   content: Text('No face detected!'),
+      //   // )
+      // );
 
       return false;
     } else {
