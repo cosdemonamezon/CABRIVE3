@@ -1,3 +1,4 @@
+import 'package:CABRIVE/Screen/Calendar/DetailTicket.dart';
 import 'package:CABRIVE/Screen/Home/ShopDetail.dart';
 import 'package:CABRIVE/Screen/Home/Trade.dart';
 import 'package:CABRIVE/Screen/Home/Wallet.dart';
@@ -136,16 +137,31 @@ class _ShopState extends State<Shop> {
                     ),
                   ),
                   Positioned(
-                    right: 10,
-                    top: 280,
+                    right: 20,
+                    top: 170,
                     child: GestureDetector(
                       onTap: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => Trade()));
                       },
                       child: Container(
-                        height: 80,
-                        width: 140,
+                        height: 300,
+                        width: 120,
+                        color: Color(0xFFF001117).withOpacity(0.0),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 160,
+                    top: 110,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => DetailTicket()));
+                      },
+                      child: Container(
+                        height: 300,
+                        width: 110,
                         color: Color(0xFFF001117).withOpacity(0.0),
                       ),
                     ),
