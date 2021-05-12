@@ -13,30 +13,32 @@ class _TopupState extends State<Topup> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;print(width);
+    final width = MediaQuery.of(context).size.width;
+    print(width);
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kInputSearchColor,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios), 
-          onPressed: (){            
-            Navigator.pop(context);
-          }
-        ),
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
         centerTitle: true,
         title: Text("TOP-UP"),
       ),
       body: Container(
         color: kInputSearchColor,
-        height: height,
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        //height: height,
+        padding: EdgeInsets.symmetric(horizontal: 15),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Container(
-                height: height*0.41,
+                height: height * 0.48,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: kBackgroundColor,
@@ -49,27 +51,33 @@ class _TopupState extends State<Topup> {
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: 15,),
+                    SizedBox(
+                      height: 15,
+                    ),
                     Center(
                       child: Text(
                         "Approximate price",
                         style: TextStyle(
-                          fontWeight: FontWeight.w400, fontSize: 16, color: kFontPrimaryColor
-                        ),
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16,
+                            color: kFontPrimaryColor),
                       ),
                     ),
-                    SizedBox(height: 15,),
-
+                    SizedBox(
+                      height: 15,
+                    ),
                     Center(
                       child: Text(
                         "1 USD ~ 36.65 EUR",
                         style: TextStyle(
-                          fontWeight: FontWeight.w400, fontSize: 25, color: kFontPrimaryColor
-                        ),
+                            fontWeight: FontWeight.w400,
+                            fontSize: 25,
+                            color: kFontPrimaryColor),
                       ),
                     ),
-                    SizedBox(height: 35,),
-
+                    SizedBox(
+                      height: 35,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Row(
@@ -77,13 +85,16 @@ class _TopupState extends State<Topup> {
                           Text(
                             "Amount to pay",
                             style: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 16, color: kFontPrimaryColor
-                            ),
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16,
+                                color: kFontPrimaryColor),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Row(
@@ -93,15 +104,18 @@ class _TopupState extends State<Topup> {
                             children: [
                               CircleAvatar(
                                 radius: 12,
-                                backgroundImage: AssetImage("assets/images/download.png"),
+                                backgroundImage:
+                                    AssetImage("assets/images/download.png"),
                               ),
                               Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 5),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5),
                                 child: Text(
                                   "USD",
                                   style: TextStyle(
-                                    fontWeight: FontWeight.w400, fontSize: 20, color: kFontPrimaryColor
-                                  ),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 20,
+                                      color: kFontPrimaryColor),
                                 ),
                               ),
                             ],
@@ -111,15 +125,17 @@ class _TopupState extends State<Topup> {
                             child: Text(
                               "1,000",
                               style: TextStyle(
-                                fontWeight: FontWeight.w400, fontSize: 20, color: kFontPrimaryColor
-                              ),
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 20,
+                                  color: kFontPrimaryColor),
                             ),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 15,),
-
+                    SizedBox(
+                      height: 15,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Row(
@@ -141,51 +157,71 @@ class _TopupState extends State<Topup> {
                             child: Row(
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 5),
                                   child: Text(
                                     "100",
                                     style: TextStyle(
-                                      fontWeight: FontWeight.w400, fontSize: 13, color: kFontPrimaryColor
-                                    ),
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 13,
+                                        color: kFontPrimaryColor),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 5),
-                                  child: VerticalDivider(thickness: 2, color: kContainer,),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 5),
+                                  child: VerticalDivider(
+                                    thickness: 2,
+                                    color: kContainer,
+                                  ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 5),
                                   child: Text(
                                     "500",
                                     style: TextStyle(
-                                      fontWeight: FontWeight.w400, fontSize: 13, color: kFontPrimaryColor
-                                    ),
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 13,
+                                        color: kFontPrimaryColor),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 5),
-                                  child: VerticalDivider(thickness: 2, color: kContainer,),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 5),
+                                  child: VerticalDivider(
+                                    thickness: 2,
+                                    color: kContainer,
+                                  ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 5),
                                   child: Text(
                                     "1,000",
                                     style: TextStyle(
-                                      fontWeight: FontWeight.w400, fontSize: 13, color: kFontPrimaryColor
-                                    ),
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 13,
+                                        color: kFontPrimaryColor),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 5),
-                                  child: VerticalDivider(thickness: 2, color: kContainer,),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 5),
+                                  child: VerticalDivider(
+                                    thickness: 2,
+                                    color: kContainer,
+                                  ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 5),
                                   child: Text(
                                     "2,000",
                                     style: TextStyle(
-                                      fontWeight: FontWeight.w400, fontSize: 13, color: kFontPrimaryColor
-                                    ),
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 13,
+                                        color: kFontPrimaryColor),
                                   ),
                                 ),
                               ],
@@ -194,8 +230,9 @@ class _TopupState extends State<Topup> {
                         ],
                       ),
                     ),
-
-                    SizedBox(height: 20,),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Row(
@@ -203,8 +240,9 @@ class _TopupState extends State<Topup> {
                           Text(
                             "Available",
                             style: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 16, color: kFontPrimaryColor
-                            ),
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16,
+                                color: kFontPrimaryColor),
                           ),
                         ],
                       ),
@@ -221,12 +259,14 @@ class _TopupState extends State<Topup> {
                                 backgroundImage: AssetImage("assets/c3.png"),
                               ),
                               Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 5),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5),
                                 child: Text(
                                   "EUR",
                                   style: TextStyle(
-                                    fontWeight: FontWeight.w400, fontSize: 20, color: kFontPrimaryColor
-                                  ),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 20,
+                                      color: kFontPrimaryColor),
                                 ),
                               ),
                             ],
@@ -236,8 +276,9 @@ class _TopupState extends State<Topup> {
                             child: Text(
                               "360",
                               style: TextStyle(
-                                fontWeight: FontWeight.w400, fontSize: 20, color: kButtonColor
-                              ),
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 20,
+                                  color: kButtonColor),
                             ),
                           ),
                         ],
@@ -246,33 +287,38 @@ class _TopupState extends State<Topup> {
                   ],
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Text(
                 " Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magnaaliqua. Bibendum est ultricies integer quis. Iaculis urna idvolutpat lacus laoreet. Mauris vitae ultricies leo integermalesuada. Ac odio tempor orci dapibus ultrices in. Egestasdiam in arcu cursus euismod. Dictum fusce ut placerat orcinulla. Tincidunt ornare massa eget egestas purus viverraaccumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus.Fusce id velit ut tortor pretium. Massa ultricies mi quis",
                 style: TextStyle(
-                  fontWeight: FontWeight.w400, fontSize: 15, color: kInputColor
+                    fontWeight: FontWeight.w400,
+                    fontSize: 15,
+                    color: kInputColor),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                height: size.height * 0.08,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: kCicleColor,
+                ),
+                child: FlatButton(
+                  onPressed: () {
+                    // Navigator.push(
+                    //   context, MaterialPageRoute(builder: (context) => Wallet2()));
+                  },
+                  child: Text("BUY",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: kTextButtonColor)),
                 ),
               ),
-              SizedBox(height: 30,),
-
-              Container(
-                    height: size.height * 0.08,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: kCicleColor,
-                    ),
-                    child: FlatButton(
-                      onPressed: () {
-                        // Navigator.push(
-                        //   context, MaterialPageRoute(builder: (context) => Wallet2()));
-                      },
-                      child: Text(
-                        "BUY",
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: kTextButtonColor)
-                      ),
-                    ),
-                  ),
             ],
           ),
         ),

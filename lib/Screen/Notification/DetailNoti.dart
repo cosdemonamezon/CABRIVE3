@@ -13,6 +13,7 @@ class _DetailNotiState extends State<DetailNoti> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -21,12 +22,14 @@ class _DetailNotiState extends State<DetailNoti> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          height: height,
+          //height: height,
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 25),
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: Column(
               children: [
-                SizedBox(height: 30,),
+                SizedBox(
+                  height: 30,
+                ),
                 Container(
                   height: 220,
                   width: double.infinity,
@@ -41,11 +44,13 @@ class _DetailNotiState extends State<DetailNoti> {
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: AssetImage(
-                        "assets/145191267_3741130079263690_2731191343081539548_o.jpg"),
+                          "assets/145191267_3741130079263690_2731191343081539548_o.jpg"),
                     ),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -63,13 +68,13 @@ class _DetailNotiState extends State<DetailNoti> {
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(
-                            "assets/144608882_3741129562597075_1449389103962532175_o.jpg"),
+                              "assets/144608882_3741129562597075_1449389103962532175_o.jpg"),
                         ),
                       ),
                     ),
                     Container(
-                      height: 110,
-                      width: 82,
+                      height: height * 0.18,
+                      width: width * 0.22,
                       //color: Colors.green,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -81,13 +86,13 @@ class _DetailNotiState extends State<DetailNoti> {
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(
-                            "assets/145337107_3741130332596998_1198327403787382672_o.jpg"),
+                              "assets/145337107_3741130332596998_1198327403787382672_o.jpg"),
                         ),
                       ),
                     ),
                     Container(
-                      height: 110,
-                      width: 82,
+                      height: height * 0.18,
+                      width: width * 0.22,
                       //color: Colors.orange,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -99,82 +104,82 @@ class _DetailNotiState extends State<DetailNoti> {
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(
-                            "assets/145232660_3741129715930393_5130650717385289926_o.jpg"),
+                              "assets/145232660_3741129715930393_5130650717385289926_o.jpg"),
                         ),
                       ),
                     ),
-                    Stack(
-                      children: [
-                        Container(
-                          height: 110,
-                          width: 82,
-                          //color: Colors.purple,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(14),
-                              topRight: Radius.circular(14),
-                              bottomLeft: Radius.circular(14),
-                              bottomRight: Radius.circular(14),
-                            ),
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage(
+                    Stack(children: [
+                      Container(
+                        height: height * 0.18,
+                        width: width * 0.22,
+                        //color: Colors.purple,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(14),
+                            topRight: Radius.circular(14),
+                            bottomLeft: Radius.circular(14),
+                            bottomRight: Radius.circular(14),
+                          ),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage(
                                 "assets/142130192_3723244804385551_7472341975798282192_o.jpg"),
-                            ),
-                          ),
-                          
-                        ),
-                        Container(
-                          width: 82,
-                          height: 110,
-                          //color: Color(0xFFF001117).withOpacity(0.7),
-                          decoration: BoxDecoration(
-                            color: Color(0xFFF001117).withOpacity(0.7),
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(14),
-                              topRight: Radius.circular(14),
-                              bottomLeft: Radius.circular(14),
-                              bottomRight: Radius.circular(14),
-                            ),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "+3", 
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20, color: kFontPrimaryColor
-                              ),
-                            ),
                           ),
                         ),
-                      ]
-                      
-                    ),
+                      ),
+                      Container(
+                        height: height * 0.18,
+                        width: width * 0.22,
+                        //color: Color(0xFFF001117).withOpacity(0.7),
+                        decoration: BoxDecoration(
+                          color: Color(0xFFF001117).withOpacity(0.7),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(14),
+                            topRight: Radius.circular(14),
+                            bottomLeft: Radius.circular(14),
+                            bottomRight: Radius.circular(14),
+                          ),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "+3",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: kFontPrimaryColor),
+                          ),
+                        ),
+                      ),
+                    ]),
                   ],
                 ),
-                SizedBox(height: 30,),
+                SizedBox(
+                  height: 30,
+                ),
                 Card(
                   color: kBackgroundColor,
                   child: ListTile(
                     title: Text(
                       "Retrouvez le résumé et les photos de la victoir",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20, color: kFontPrimaryColor
-                      ),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: kFontPrimaryColor),
                     ),
                     subtitle: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 15),
                       child: Text(
                         "Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec nterdum, lectus in convallis pulvinar, enim elit porta sapien, vel finibus erat felis sed neque.Etiam aliquet neque sagittis erat tincidunt aliquam. Vestibulum at neque hendrerit, mollis dolor at, blandit justo. Integer ac interdum purus. In placerat lorem non quam pulvinar molestie ac eget lacus. Proin mollis lobortis",
                         style: TextStyle(
-                          fontWeight: FontWeight.w400, fontSize: 16, color: kFontTextColor
-                        ),
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16,
+                            color: kFontTextColor),
                       ),
                     ),
                   ),
                 ),
               ],
             ),
-            
           ),
         ),
       ),
